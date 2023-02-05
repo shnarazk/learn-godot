@@ -4,6 +4,10 @@
 
 ## Today I learn
 
-### part 5
+### part 4
 
 There's SortZ in Godot4. It was merged into Node2D.
+
+### part 5
+
+`onready` was renamed to `@onready`

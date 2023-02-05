@@ -6,6 +6,7 @@ const JUMP_VELOCITY = -400.0
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
+@onready var animationPlayer = $AnimationPlayer
 
 func _physics_process(_delta):
 	# Add the gravity.
@@ -21,11 +22,16 @@ func _physics_process(_delta):
 	input_vector.x = Input.get_axis("ui_left", "ui_right")
 	input_vector.y = Input.get_axis("ui_up", "ui_down")
 	if input_vector != Vector2.ZERO:
+		if 0 < input_vector.x:
+			animationPlayer.play("RunRight")
+		else:
+			animationPlayer.play("RunLeft")
 		velocity += input_vector.normalized() * ACCELARATION
 		velocity = velocity.normalized() * min(SPEED, velocity.length())
 	else:
+		animationPlayer.play("IdleRight")
 		velocity = velocity.move_toward(Vector2.ZERO, SPEED)
 	move_and_slide()
 
-func _ready():
-	print("Hello world!")
+#func _ready():
+#	print("Hello world!")
