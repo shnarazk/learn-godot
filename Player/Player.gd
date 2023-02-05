@@ -7,8 +7,7 @@ const JUMP_VELOCITY = -400.0
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
-
-func _physics_process(delta):
+func _physics_process(_delta):
 	# Add the gravity.
 #	if not is_on_floor():
 #		velocity.y += gravity * delta
@@ -22,11 +21,11 @@ func _physics_process(delta):
 	input_vector.x = Input.get_axis("ui_left", "ui_right")
 	input_vector.y = Input.get_axis("ui_up", "ui_down")
 	if input_vector != Vector2.ZERO:
-		velocity += input_vector.normalized() * ACCELARATION * delta
-		velocity = velocity.normalized() * min(SPEED * delta, velocity.length())
+		velocity += input_vector.normalized() * ACCELARATION
+		velocity = velocity.normalized() * min(SPEED, velocity.length())
 	else:
-		velocity = velocity.move_toward(Vector2.ZERO, SPEED * delta)
-	move_and_collide(velocity)
+		velocity = velocity.move_toward(Vector2.ZERO, SPEED)
+	move_and_slide()
 
 func _ready():
 	print("Hello world!")
