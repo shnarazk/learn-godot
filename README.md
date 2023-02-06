@@ -31,3 +31,9 @@ The transitions among the states need:
 
 - `Switch/Mode`: `Sync`
 - `Advance/Mode`: `Disable`
+
+### part 10
+
+- `instance` was renamed to `instantiate`.
+
+

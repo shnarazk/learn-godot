@@ -17,7 +17,7 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 @onready var animationTree = $AnimationTree
 @onready var animationState = animationTree.get("parameters/playback")
 
-func _physics_process(_delta):
+func _process(_delta):
 	match state:
 		MOVE:
 			move_state()
