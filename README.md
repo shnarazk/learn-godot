@@ -24,3 +24,10 @@ We need to read the document on `AnimationStateMachine`. I don't understand how 
 ### part 8
 
 - https://youtu.be/tQSL2scuqeU?t=188
+
+### part 9
+
+The transitions among the states needs:
+
+- `Switch/Mode`: `Sync`
+- `Advance/Mode`: `Disable`
