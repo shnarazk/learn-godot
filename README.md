@@ -27,7 +27,7 @@ We need to read the document on `AnimationStateMachine`. I don't understand how 
 
 ### part 9
 
-The transitions among the states needs:
+The transitions among the states need:
 
 - `Switch/Mode`: `Sync`
 - `Advance/Mode`: `Disable`
