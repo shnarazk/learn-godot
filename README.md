@@ -19,10 +19,8 @@ We need to read the document on `AnimationStateMachine`. I don't understand how 
 
 ### part 7
 
-- https://www.youtube.com/watch?v=tQSL2scuqeU&pp=ugMICgJqYRABGAE%3D
 - https://youtu.be/tQSL2scuqeU?t=139
 
 ### part 8
 
-- https://www.youtube.com/watch?v=tQSL2scuqeU&pp=ugMICgJqYRABGAE%3D?t=139t=188
-
+- https://youtu.be/tQSL2scuqeU?t=188
