@@ -969,3 +969,9 @@ position = Vector2(16, 0)
 
 [node name="Grass10" parent="Stage/Grass" instance=ExtResource("7_7wky0")]
 position = Vector2(240, 224)
+
+[node name="Bush" parent="." instance=ExtResource("2_2trvq")]
+position = Vector2(16, 72)
+
+[node name="Bush2" parent="." instance=ExtResource("2_2trvq")]
+position = Vector2(0, 112)
