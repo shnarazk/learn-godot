@@ -36,4 +36,6 @@ The transitions among the states need:
 
 - `instance` was renamed to `instantiate`.
 
+### part 11
 
+- The layer setting seems weird... Signal emmiter should be sensible. So grass needs a mask, right?
