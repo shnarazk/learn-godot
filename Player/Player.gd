@@ -1,14 +1,14 @@
 extends CharacterBody2D
 
-enum {
+enum State {
 	MOVE,
 	ROLL,
 	ATTACK
 }
 
-var state = MOVE
-const ACCELARATION = 10.0
-const SPEED = 200.0
+var state: State = State.MOVE
+const ACCELARATION: float = 10.0
+const SPEED: float = 200.0
 const JUMP_VELOCITY = -400.0
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
@@ -17,16 +17,16 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 @onready var animationTree = $AnimationTree
 @onready var animationState = animationTree.get("parameters/playback")
 
-func _physics_process(_delta):
+func _physics_process(_delta: float) -> void:
 	match state:
-		MOVE:
+		State.MOVE:
 			move_state()
-		ATTACK:
+		State.ATTACK:
 			attack_state()
-		ROLL:
+		State.ROLL:
 			move_state()
 	
-func move_state():
+func move_state() -> void:
 	var input_vector = Vector2.ZERO
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
@@ -44,16 +44,16 @@ func move_state():
 		velocity = velocity.move_toward(Vector2.ZERO, SPEED)
 	move_and_slide()
 	if Input.is_action_just_pressed("attack"):
-		state = ATTACK
+		state = State.ATTACK
 	
-func attack_state():
+func attack_state() -> void:
 	velocity = Vector2.ZERO
 	animationState.travel("Attack")
 	
-func attack_animation_finished():
-	state = MOVE
+func attack_animation_finished() -> void:
+	state = State.MOVE
 
-func _ready():
+func _ready() -> void:
 	animationTree.active = true
 	animationState.travel("Idle")
 #	print("Hello world!")

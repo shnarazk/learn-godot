@@ -10,13 +10,13 @@ extends Node2D
 #		grassEffect.global_position = global_position
 #		queue_free()
 
-func create_grass_effect():
+func create_grass_effect() -> void:
 		var grassEffect = GrassEffect.instantiate()
 		var world = get_tree().current_scene
 		world.add_child(grassEffect)
 		grassEffect.global_position = global_position
 		queue_free()
 
-func _on_hurtbox_area_entered(area):
+func _on_hurtbox_area_entered(area) -> void:
 	create_grass_effect()
 	queue_free()
