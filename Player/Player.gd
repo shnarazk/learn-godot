@@ -10,14 +10,17 @@ var state: State = State.MOVE
 const ACCELARATION: float = 10.0
 const SPEED: float = 200.0
 const ROLL_SPEED: float = 180.0
-const JUMP_VELOCITY = -400.0
+# const JUMP_VELOCITY = -400.0
 var roll_vector: Vector2 = Vector2.RIGHT
 
-# Get the gravity from the project settings to be synced with RigidBody nodes.
-var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
-@onready var animationPlayer = $AnimationPlayer
-@onready var animationTree = $AnimationTree
-@onready var animationState = animationTree.get("parameters/playback")
+# # Get the gravity from the project settings to be synced with RigidBody nodes.
+# var gravity: float = ProjectSettings.get_setting("physics/2d/default_gravity")
+@onready
+var animationPlayer: Object = $AnimationPlayer
+@onready
+var animationTree: Object = $AnimationTree
+@onready
+var animationState: Object = animationTree.get("parameters/playback")
 
 func _physics_process(_delta: float) -> void:
 	match state:
@@ -30,8 +33,8 @@ func _physics_process(_delta: float) -> void:
 	
 func move_state() -> void:
 	var input_vector = Vector2.ZERO
-	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
-		velocity.y = JUMP_VELOCITY
+	# if Input.is_action_just_pressed("ui_accept") and is_on_floor():
+	# 	velocity.y = JUMP_VELOCITY
 	input_vector.x = Input.get_axis("ui_left", "ui_right")
 	input_vector.y = Input.get_axis("ui_up", "ui_down")
 	if input_vector != Vector2.ZERO:
@@ -74,4 +77,3 @@ func roll_animation_finished() -> void:
 func _ready() -> void:
 	animationTree.active = true
 	animationState.travel("Idle")
-#	print("Hello world!")
