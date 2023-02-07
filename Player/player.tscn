@@ -41,26 +41,26 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("HitboxPivot:skew")
+tracks/2/path = NodePath("HitboxPivot/SwordHitbox/CollisionShape2D:disabled")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("HitboxPivot/SwordHitbox/CollisionShape2D:disabled")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
 "times": PackedFloat32Array(0.1, 0.3),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [false, true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("HitboxPivot:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.5708]
 }
 
 [sub_resource type="Animation" id="Animation_4rtqb"]
@@ -687,7 +687,7 @@ states/Run/node = SubResource("AnimationNodeBlendSpace2D_cud3k")
 states/Run/position = Vector2(313, 132)
 states/Start/position = Vector2(118, 32)
 transitions = ["Idle", "Run", SubResource("AnimationNodeStateMachineTransition_yj62o"), "Run", "Idle", SubResource("AnimationNodeStateMachineTransition_mwajc"), "Start", "Idle", SubResource("AnimationNodeStateMachineTransition_rjlwk"), "Idle", "Attack", SubResource("AnimationNodeStateMachineTransition_jo1tt"), "Attack", "Idle", SubResource("AnimationNodeStateMachineTransition_krlo5"), "Idle", "Roll", SubResource("AnimationNodeStateMachineTransition_d72ch"), "Roll", "Idle", SubResource("AnimationNodeStateMachineTransition_vqcus")]
-graph_offset = Vector2(-90.1251, -151.028)
+graph_offset = Vector2(-177.785, 22.102)
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id="AnimationNodeStateMachinePlayback_rcoqi"]
 
@@ -725,7 +725,7 @@ parameters/Run/blend_position = Vector2(0, 0)
 
 [node name="HitboxPivot" type="Node2D" parent="."]
 position = Vector2(0, -8)
-rotation = 4.71239
+rotation = 1.5708
 
 [node name="SwordHitbox" parent="HitboxPivot" instance=ExtResource("3_yiu0d")]
 position = Vector2(16, 2)

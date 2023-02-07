@@ -48,3 +48,9 @@ The transitions among the states need:
 
 setter/getter syntax was revised:
 - https://docs.godotengine.org/en/latest/tutorials/scripting/gdscript/gdscript_basics.html#properties-setters-and-getters
+
+### part 15
+
+I gave up to in-place update of GrassEffect.tscn.
+
+ 

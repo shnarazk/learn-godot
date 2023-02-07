@@ -11,7 +11,7 @@ const ACCELARATION: float = 10.0
 const SPEED: float = 200.0
 const ROLL_SPEED: float = 180.0
 # const JUMP_VELOCITY = -400.0
-var roll_vector: Vector2 = Vector2.RIGHT
+var roll_vector: Vector2 = Vector2.UP
 
 # # Get the gravity from the project settings to be synced with RigidBody nodes.
 # var gravity: float = ProjectSettings.get_setting("physics/2d/default_gravity")
