@@ -1,7 +1,10 @@
-[gd_scene format=3 uid="uid://vm7y1frn856f"]
+[gd_scene load_steps=2 format=3 uid="uid://vm7y1frn856f"]
+
+[ext_resource type="Script" path="res://Boxes/hitbox.gd" id="1_t088w"]
 
 [node name="Hitbox" type="Area2D"]
 collision_layer = 0
 collision_mask = 0
+script = ExtResource("1_t088w")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

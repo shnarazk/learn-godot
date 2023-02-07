@@ -44,4 +44,7 @@ The transitions among the states need:
 
 - The movement system for bat were modified completely due to the revised `move_and_slide`.
 
+### part 14
 
+setter/getter syntax was revised:
+- https://docs.godotengine.org/en/latest/tutorials/scripting/gdscript/gdscript_basics.html#properties-setters-and-getters
