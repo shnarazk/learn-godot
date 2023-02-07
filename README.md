@@ -39,3 +39,9 @@ The transitions among the states need:
 ### part 11
 
 - The layer setting seems weird... Signal emmiter should be sensible. So grass needs a mask, right?
+
+### part 13
+
+- The movement system for bat were modified completely due to the revised `move_and_slide`.
+
+

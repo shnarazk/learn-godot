@@ -21,6 +21,8 @@ var animationPlayer: Object = $AnimationPlayer
 var animationTree: Object = $AnimationTree
 @onready
 var animationState: Object = animationTree.get("parameters/playback")
+@onready
+var sworditbox: Object = $HitboxPivot/SwordHitbox
 
 func _physics_process(_delta: float) -> void:
 	match state:
@@ -46,6 +48,7 @@ func move_state() -> void:
 		velocity += input_vector.normalized() * ACCELARATION
 		velocity = velocity.normalized() * min(SPEED, velocity.length())
 		roll_vector = input_vector
+		sworditbox.knockback_vector = roll_vector
 	else:
 		animationState.travel("Idle")
 		velocity = velocity.move_toward(Vector2.ZERO, SPEED)
@@ -77,3 +80,4 @@ func roll_animation_finished() -> void:
 func _ready() -> void:
 	animationTree.active = true
 	animationState.travel("Idle")
+	sworditbox.knockback_vector = roll_vector

@@ -1,8 +1,9 @@
-[gd_scene load_steps=58 format=3 uid="uid://bcbki7h5t1uyb"]
+[gd_scene load_steps=59 format=3 uid="uid://bcbki7h5t1uyb"]
 
 [ext_resource type="Script" path="res://Player/Player.gd" id="1_r6lmn"]
 [ext_resource type="Texture2D" uid="uid://bhmnvk7meoj8" path="res://Player/Player.png" id="2_c2kab"]
 [ext_resource type="PackedScene" uid="uid://vm7y1frn856f" path="res://Boxes/hitbox.tscn" id="3_yiu0d"]
+[ext_resource type="Script" path="res://Boxes/Swordhitbox.gd" id="4_3bpxf"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_25au7"]
 radius = 5.0
@@ -52,7 +53,7 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("HitboxPivot/Hitbox/CollisionShape2D:disabled")
+tracks/3/path = NodePath("HitboxPivot/SwordHitbox/CollisionShape2D:disabled")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -106,7 +107,7 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("HitboxPivot/Hitbox/CollisionShape2D:disabled")
+tracks/3/path = NodePath("HitboxPivot/SwordHitbox/CollisionShape2D:disabled")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -160,7 +161,7 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("HitboxPivot/Hitbox/CollisionShape2D:disabled")
+tracks/3/path = NodePath("HitboxPivot/SwordHitbox/CollisionShape2D:disabled")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -214,7 +215,7 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("HitboxPivot/Hitbox/CollisionShape2D:disabled")
+tracks/3/path = NodePath("HitboxPivot/SwordHitbox/CollisionShape2D:disabled")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -308,7 +309,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("HitboxPivot/Hitbox/CollisionShape2D:disabled")
+tracks/1/path = NodePath("HitboxPivot/SwordHitbox/CollisionShape2D:disabled")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -726,13 +727,14 @@ parameters/Run/blend_position = Vector2(0, 0)
 position = Vector2(0, -8)
 rotation = 4.71239
 
-[node name="Hitbox" parent="HitboxPivot" instance=ExtResource("3_yiu0d")]
+[node name="SwordHitbox" parent="HitboxPivot" instance=ExtResource("3_yiu0d")]
 position = Vector2(16, 2)
 collision_layer = 4
 collision_mask = 8
+script = ExtResource("4_3bpxf")
 
-[node name="CollisionShape2D" parent="HitboxPivot/Hitbox" index="0"]
+[node name="CollisionShape2D" parent="HitboxPivot/SwordHitbox" index="0"]
 shape = SubResource("CapsuleShape2D_6iuy8")
 disabled = true
 
-[editable path="HitboxPivot/Hitbox"]
+[editable path="HitboxPivot/SwordHitbox"]
