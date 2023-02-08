@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://cnt5hkw533qv6"]
+[gd_scene load_steps=17 format=3 uid="uid://cnt5hkw533qv6"]
 
 [ext_resource type="PackedScene" uid="uid://bcr2lwb6vx41y" path="res://World/bush.tscn" id="2_2trvq"]
 [ext_resource type="Texture2D" uid="uid://cm8q4smyln551" path="res://World/CliffTileset.png" id="2_b3jb0"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://07h48mm372wa" path="res://World/GrassBackground.png" id="3_mibyk"]
 [ext_resource type="Texture2D" uid="uid://by03bfsulkr5y" path="res://World/Bush.png" id="6_h5ra4"]
 [ext_resource type="PackedScene" uid="uid://dmgil7b2jrafo" path="res://World/grass.tscn" id="7_7wky0"]
+[ext_resource type="PackedScene" uid="uid://f6cigeeyykla" path="res://World/tree.tscn" id="8_oyn67"]
 [ext_resource type="PackedScene" uid="uid://b54ya505oh3nc" path="res://Enemies/bat.tscn" id="8_tkuon"]
 [ext_resource type="PackedScene" uid="uid://b68tnuvvqaoub" path="res://UI/health_ui.tscn" id="9_3md2h"]
 [ext_resource type="PackedScene" uid="uid://cs4upjuoqhxg8" path="res://Player/player_stats.tscn" id="10_sjqh1"]
@@ -957,13 +958,13 @@ position = Vector2(224, 8)
 position = Vector2(144, 80)
 
 [node name="Grass2" parent="Stage/Grass" instance=ExtResource("7_7wky0")]
-position = Vector2(200, 200)
+position = Vector2(268, 67)
 
 [node name="Grass3" parent="Stage/Grass" instance=ExtResource("7_7wky0")]
 position = Vector2(48, 16)
 
 [node name="Grass5" parent="Stage/Grass" instance=ExtResource("7_7wky0")]
-position = Vector2(240, 0)
+position = Vector2(115, 131)
 
 [node name="Grass6" parent="Stage/Grass" instance=ExtResource("7_7wky0")]
 position = Vector2(160, 200)
@@ -975,27 +976,43 @@ position = Vector2(80, 208)
 position = Vector2(16, 144)
 
 [node name="Grass9" parent="Stage/Grass" instance=ExtResource("7_7wky0")]
-position = Vector2(16, 0)
+position = Vector2(7, 73)
 
 [node name="Grass10" parent="Stage/Grass" instance=ExtResource("7_7wky0")]
 position = Vector2(240, 224)
 
+[node name="Trees" type="Node2D" parent="Stage"]
+y_sort_enabled = true
+
+[node name="Tree" parent="Stage/Trees" instance=ExtResource("8_oyn67")]
+position = Vector2(160, 64)
+
+[node name="Tree2" parent="Stage/Trees" instance=ExtResource("8_oyn67")]
+position = Vector2(232, 208)
+
+[node name="Tree3" parent="Stage/Trees" instance=ExtResource("8_oyn67")]
+position = Vector2(96, 168)
+
 [node name="Bat" parent="Stage" instance=ExtResource("8_tkuon")]
-position = Vector2(152, 152)
+position = Vector2(165, 158)
 
 [node name="Bat2" parent="Stage" instance=ExtResource("8_tkuon")]
-position = Vector2(32, 128)
+position = Vector2(6, 87)
 
 [node name="Bat3" parent="Stage" instance=ExtResource("8_tkuon")]
-position = Vector2(195, 85)
+position = Vector2(257, 218)
 
 [node name="Bat4" parent="Stage" instance=ExtResource("8_tkuon")]
-position = Vector2(256, 40)
-
-[node name="healthUI" parent="." node_paths=PackedStringArray("stats") instance=ExtResource("9_3md2h")]
-stats = NodePath("../PlayerStats")
+position = Vector2(268, 42)
 
 [node name="PlayerStats" parent="." instance=ExtResource("10_sjqh1")]
+
+[node name="healthUI" parent="." node_paths=PackedStringArray("stats") instance=ExtResource("9_3md2h")]
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 44.0
+offset_bottom = 44.0
+stats = NodePath("../PlayerStats")
 
 [connection signal="health_changed" from="PlayerStats" to="healthUI" method="_on_player_stats_health_changed"]
 [connection signal="no_health" from="PlayerStats" to="Stage/Player" method="_on_player_stats_no_health"]
