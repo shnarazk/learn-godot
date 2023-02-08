@@ -899,7 +899,7 @@ layer_0/tile_data = PackedInt32Array(393215, 65536, 3, 524287, 65536, 0, 458752,
 y_sort_enabled = true
 
 [node name="Player" parent="Stage" instance=ExtResource("2_ll3rf")]
-position = Vector2(160, 80)
+position = Vector2(116, 76)
 
 [node name="Bushes" type="Node2D" parent="Stage"]
 y_sort_enabled = true
@@ -984,7 +984,7 @@ position = Vector2(152, 152)
 position = Vector2(32, 128)
 
 [node name="Bat3" parent="Stage" instance=ExtResource("8_tkuon")]
-position = Vector2(192, 80)
+position = Vector2(195, 85)
 
 [node name="Bat4" parent="Stage" instance=ExtResource("8_tkuon")]
 position = Vector2(256, 40)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://b54ya505oh3nc"]
+[gd_scene load_steps=18 format=3 uid="uid://b54ya505oh3nc"]
 
 [ext_resource type="Script" path="res://Enemies/bat.gd" id="1_qhin5"]
 [ext_resource type="Texture2D" uid="uid://cretm0itigidm" path="res://Enemies/Bat.png" id="1_yo5xh"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://7dixg8fhjmv1" path="res://Boxes/hurtbox.tscn" id="4_v7ypd"]
 [ext_resource type="PackedScene" uid="uid://cnt8jv6nbfa8e" path="res://stats.tscn" id="5_8xm3h"]
 [ext_resource type="PackedScene" uid="uid://bdrhuibxo27pi" path="res://Enemies/player_detection_zone.tscn" id="6_j8wgg"]
+[ext_resource type="PackedScene" uid="uid://vm7y1frn856f" path="res://Boxes/hitbox.tscn" id="7_6ywmv"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tnsmf"]
 atlas = ExtResource("1_yo5xh")
@@ -60,8 +61,13 @@ height = 16.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_ni111"]
 radius = 60.0083
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_h2phd"]
+radius = 5.0
+height = 10.0
+
 [node name="Bat" type="CharacterBody2D"]
 collision_layer = 0
+collision_mask = 0
 script = ExtResource("1_qhin5")
 
 [node name="BatSprite" type="AnimatedSprite2D" parent="."]
@@ -78,8 +84,7 @@ texture = ExtResource("2_8gfya")
 shape = SubResource("CircleShape2D_6bv4k")
 
 [node name="Hurtbox" parent="." instance=ExtResource("4_v7ypd")]
-collision_layer = 8
-collision_mask = 4
+collision_mask = 8
 
 [node name="CollisionShape2D" parent="Hurtbox" index="0"]
 position = Vector2(0, -12)
@@ -93,8 +98,17 @@ max_health = 2
 [node name="CollisionShape2D" parent="PlayerDetectionZone" index="0"]
 shape = SubResource("CircleShape2D_ni111")
 
+[node name="Hitbox" parent="." instance=ExtResource("7_6ywmv")]
+collision_layer = 4
+
+[node name="CollisionShape2D" parent="Hitbox" index="0"]
+position = Vector2(0, -13)
+shape = SubResource("CapsuleShape2D_h2phd")
+debug_color = Color(0.701961, 0, 0.462745, 0.419608)
+
 [connection signal="area_entered" from="Hurtbox" to="." method="_on_hurtbox_area_entered"]
 [connection signal="no_health" from="Stats" to="." method="_on_stats_no_health"]
 
 [editable path="Hurtbox"]
 [editable path="PlayerDetectionZone"]
+[editable path="Hitbox"]

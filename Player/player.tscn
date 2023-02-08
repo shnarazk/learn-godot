@@ -1,9 +1,11 @@
-[gd_scene load_steps=59 format=3 uid="uid://bcbki7h5t1uyb"]
+[gd_scene load_steps=62 format=3 uid="uid://bcbki7h5t1uyb"]
 
 [ext_resource type="Script" path="res://Player/Player.gd" id="1_r6lmn"]
 [ext_resource type="Texture2D" uid="uid://bhmnvk7meoj8" path="res://Player/Player.png" id="2_c2kab"]
 [ext_resource type="PackedScene" uid="uid://vm7y1frn856f" path="res://Boxes/hitbox.tscn" id="3_yiu0d"]
 [ext_resource type="Script" path="res://Boxes/Swordhitbox.gd" id="4_3bpxf"]
+[ext_resource type="PackedScene" uid="uid://7dixg8fhjmv1" path="res://Boxes/hurtbox.tscn" id="5_sjoy3"]
+[ext_resource type="PackedScene" uid="uid://cs4upjuoqhxg8" path="res://Player/player_stats.tscn" id="6_3ohew"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_25au7"]
 radius = 5.0
@@ -694,6 +696,10 @@ graph_offset = Vector2(-177.785, 22.102)
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6iuy8"]
 height = 28.0
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_lwlxu"]
+radius = 7.0
+height = 20.0
+
 [node name="Player" type="CharacterBody2D"]
 collision_layer = 2
 script = ExtResource("1_r6lmn")
@@ -729,8 +735,7 @@ rotation = 1.5708
 
 [node name="SwordHitbox" parent="HitboxPivot" instance=ExtResource("3_yiu0d")]
 position = Vector2(16, 2)
-collision_layer = 4
-collision_mask = 8
+collision_layer = 8
 script = ExtResource("4_3bpxf")
 damage = 2
 
@@ -738,4 +743,18 @@ damage = 2
 shape = SubResource("CapsuleShape2D_6iuy8")
 disabled = true
 
+[node name="Hurtbox" parent="." instance=ExtResource("5_sjoy3")]
+collision_mask = 4
+
+[node name="CollisionShape2D" parent="Hurtbox" index="0"]
+position = Vector2(0, -12)
+shape = SubResource("CapsuleShape2D_lwlxu")
+
+[node name="PlayerStats" parent="." instance=ExtResource("6_3ohew")]
+max_health = 4
+
+[connection signal="area_entered" from="Hurtbox" to="." method="_on_hurtbox_area_entered"]
+[connection signal="no_health" from="PlayerStats" to="." method="_on_player_stats_no_health"]
+
 [editable path="HitboxPivot/SwordHitbox"]
+[editable path="Hurtbox"]

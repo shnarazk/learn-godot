@@ -23,6 +23,10 @@ var animationTree: Object = $AnimationTree
 var animationState: Object = animationTree.get("parameters/playback")
 @onready
 var sworditbox: Object = $HitboxPivot/SwordHitbox
+@onready
+var stats: Object = $PlayerStats
+@onready
+var hurtbox: Object = $Hurtbox
 
 func _physics_process(_delta: float) -> void:
 	match state:
@@ -78,6 +82,15 @@ func roll_animation_finished() -> void:
 	state = State.MOVE
 
 func _ready() -> void:
+	# stats.connect("no_health", queue_free)
 	animationTree.active = true
 	animationState.travel("Idle")
 	sworditbox.knockback_vector = roll_vector
+
+func _on_hurtbox_area_entered(_area) -> void:
+	stats.health -= 1
+	hurtbox.start_invincibility(0.5)
+	hurtbox.create_hit_effect()
+
+func _on_player_stats_no_health() -> void:
+	queue_free()

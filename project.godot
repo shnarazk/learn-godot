@@ -10,17 +10,17 @@ config_version=5
 
 [application]
 
-config/name="Grpg"
+config/name="Action RPG"
 run/main_scene="res://world.tscn"
 config/features=PackedStringArray("4.0", "Forward Plus")
 config/icon="res://icon.svg"
 
 [display]
 
-window/size/viewport_width=640
-window/size/viewport_height=480
+window/size/viewport_width=1280
+window/size/viewport_height=960
 window/stretch/mode="viewport"
-window/stretch/scale=2.0
+window/stretch/scale=4.0
 
 [input]
 
@@ -43,3 +43,9 @@ roll={
 2d_physics/layer_2="Player"
 2d_physics/layer_3="PlayerHurtbox"
 2d_physics/layer_4="EnemyHurtbox"
+
+[rendering]
+
+anti_aliasing/quality/msaa_2d=1
+anti_aliasing/quality/use_taa=true
+textures/canvas_textures/default_texture_filter=0

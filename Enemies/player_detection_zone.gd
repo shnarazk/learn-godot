@@ -8,5 +8,5 @@ func can_see_player() -> bool:
 func _on_body_entered(body) -> void:
 	player = body
 
-func _on_body_exited(body) -> void:
+func _on_body_exited(_body) -> void:
 	player = null
