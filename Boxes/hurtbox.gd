@@ -29,7 +29,7 @@ func _on_timer_timeout() -> void:
 	self.invincible = false
 
 func _on_invincibility_started() -> void:
-	set_deferred("monitorable", false)
+	set_deferred("monitoring", false)
 
 func _on_invincibility_ended() -> void:
-	monitorable = true
+	monitoring = true

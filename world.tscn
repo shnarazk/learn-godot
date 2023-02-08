@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://cnt5hkw533qv6"]
+[gd_scene load_steps=16 format=3 uid="uid://cnt5hkw533qv6"]
 
 [ext_resource type="PackedScene" uid="uid://bcr2lwb6vx41y" path="res://World/bush.tscn" id="2_2trvq"]
 [ext_resource type="Texture2D" uid="uid://cm8q4smyln551" path="res://World/CliffTileset.png" id="2_b3jb0"]
@@ -8,6 +8,8 @@
 [ext_resource type="Texture2D" uid="uid://by03bfsulkr5y" path="res://World/Bush.png" id="6_h5ra4"]
 [ext_resource type="PackedScene" uid="uid://dmgil7b2jrafo" path="res://World/grass.tscn" id="7_7wky0"]
 [ext_resource type="PackedScene" uid="uid://b54ya505oh3nc" path="res://Enemies/bat.tscn" id="8_tkuon"]
+[ext_resource type="PackedScene" uid="uid://b68tnuvvqaoub" path="res://UI/health_ui.tscn" id="9_3md2h"]
+[ext_resource type="PackedScene" uid="uid://cs4upjuoqhxg8" path="res://Player/player_stats.tscn" id="10_sjqh1"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3aefq"]
 texture = ExtResource("2_tkb0r")
@@ -898,8 +900,9 @@ layer_0/tile_data = PackedInt32Array(393215, 65536, 3, 524287, 65536, 0, 458752,
 [node name="Stage" type="Node2D" parent="."]
 y_sort_enabled = true
 
-[node name="Player" parent="Stage" instance=ExtResource("2_ll3rf")]
+[node name="Player" parent="Stage" node_paths=PackedStringArray("stats") instance=ExtResource("2_ll3rf")]
 position = Vector2(116, 76)
+stats = NodePath("../../PlayerStats")
 
 [node name="Bushes" type="Node2D" parent="Stage"]
 y_sort_enabled = true
@@ -988,3 +991,11 @@ position = Vector2(195, 85)
 
 [node name="Bat4" parent="Stage" instance=ExtResource("8_tkuon")]
 position = Vector2(256, 40)
+
+[node name="healthUI" parent="." node_paths=PackedStringArray("stats") instance=ExtResource("9_3md2h")]
+stats = NodePath("../PlayerStats")
+
+[node name="PlayerStats" parent="." instance=ExtResource("10_sjqh1")]
+
+[connection signal="health_changed" from="PlayerStats" to="healthUI" method="_on_player_stats_health_changed"]
+[connection signal="no_health" from="PlayerStats" to="Stage/Player" method="_on_player_stats_no_health"]

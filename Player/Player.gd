@@ -23,8 +23,8 @@ var animationTree: Object = $AnimationTree
 var animationState: Object = animationTree.get("parameters/playback")
 @onready
 var sworditbox: Object = $HitboxPivot/SwordHitbox
-@onready
-var stats: Object = $PlayerStats
+@export
+var stats: Node
 @onready
 var hurtbox: Object = $Hurtbox
 
@@ -83,6 +83,7 @@ func roll_animation_finished() -> void:
 
 func _ready() -> void:
 	# stats.connect("no_health", queue_free)
+	stats.max_health = 4
 	animationTree.active = true
 	animationState.travel("Idle")
 	sworditbox.knockback_vector = roll_vector
