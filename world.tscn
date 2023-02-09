@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://cnt5hkw533qv6"]
+[gd_scene load_steps=18 format=3 uid="uid://cnt5hkw533qv6"]
 
 [ext_resource type="PackedScene" uid="uid://bcr2lwb6vx41y" path="res://World/bush.tscn" id="2_2trvq"]
 [ext_resource type="Texture2D" uid="uid://cm8q4smyln551" path="res://World/CliffTileset.png" id="2_b3jb0"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://b54ya505oh3nc" path="res://Enemies/bat.tscn" id="8_tkuon"]
 [ext_resource type="PackedScene" uid="uid://b68tnuvvqaoub" path="res://UI/health_ui.tscn" id="9_3md2h"]
 [ext_resource type="PackedScene" uid="uid://cs4upjuoqhxg8" path="res://Player/player_stats.tscn" id="10_sjqh1"]
+[ext_resource type="AudioStream" uid="uid://b5jr5seywjapw" path="res://Music and Sounds/Music.mp3" id="12_drju8"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3aefq"]
 texture = ExtResource("2_tkb0r")
@@ -1025,6 +1026,11 @@ offset_top = 4.0
 offset_right = 66.0
 offset_bottom = 18.0
 stats = NodePath("../../PlayerStats")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(146, 136)
+stream = ExtResource("12_drju8")
+autoplay = true
 
 [connection signal="health_changed" from="PlayerStats" to="CanvasLayer/healthUI" method="_on_player_stats_health_changed"]
 [connection signal="no_health" from="PlayerStats" to="Stage/Player" method="_on_player_stats_no_health"]
