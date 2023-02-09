@@ -58,4 +58,7 @@ I gave up to in-place update of GrassEffect.tscn.
 
 I use the reversed vector to avoid congesion. No clear differences.
 
- 
+### part 22
+
+Displaying animation panel is needed to show key icons.
+

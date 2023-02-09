@@ -10,6 +10,7 @@ var state: State = State.MOVE
 const ACCELARATION: float = 10.0
 const SPEED: float = 200.0
 const ROLL_SPEED: float = 180.0
+const PlayerHurtSound: PackedScene = preload("res://Player/player_hurt_sound.tscn")
 # const JUMP_VELOCITY = -400.0
 var roll_vector: Vector2 = Vector2.UP
 
@@ -27,6 +28,8 @@ var sworditbox: Object = $HitboxPivot/SwordHitbox
 var stats: Node
 @onready
 var hurtbox: Object = $Hurtbox
+@onready
+var blinkAnimationPlayer: Node = $BlinkAnimationPlayer
 
 func _physics_process(_delta: float) -> void:
 	match state:
@@ -88,10 +91,18 @@ func _ready() -> void:
 	animationState.travel("Idle")
 	sworditbox.knockback_vector = roll_vector
 
-func _on_hurtbox_area_entered(_area) -> void:
-	stats.health -= 1
-	hurtbox.start_invincibility(0.5)
+func _on_hurtbox_area_entered(area) -> void:
+	stats.health -= area.damage
+	hurtbox.start_invincibility(0.6)
 	hurtbox.create_hit_effect()
+	var playerHurtSound = PlayerHurtSound.instantiate()
+	get_tree().current_scene.add_child(playerHurtSound)
 
 func _on_player_stats_no_health() -> void:
 	queue_free()
+
+func _on_hurtbox_invincibility_started():
+	blinkAnimationPlayer.play("Start")
+
+func _on_hurtbox_invincibility_ended():
+	blinkAnimationPlayer.play("Stop")
