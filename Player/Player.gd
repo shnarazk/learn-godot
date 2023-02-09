@@ -82,7 +82,7 @@ func roll_animation_finished() -> void:
 	state = State.MOVE
 
 func _ready() -> void:
-	# stats.connect("no_health", queue_free)
+	randomize()
 	stats.max_health = 4
 	animationTree.active = true
 	animationState.travel("Idle")
