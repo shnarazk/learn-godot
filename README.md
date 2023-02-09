@@ -54,4 +54,8 @@ setter/getter syntax was revised:
 I gave up to in-place update of GrassEffect.tscn.
 - https://docs.godotengine.org/en/latest/classes/class_object.html#class-object-method-connect
 
+### part 19
+
+I use the reversed vector to avoid congesion. No clear differences.
+
  

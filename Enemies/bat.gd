@@ -20,11 +20,13 @@ var state: BatState = BatState.IDLE
 @onready
 var stats = $Stats
 @onready
-var playerDetectionZone: Object = $PlayerDetectionZone
+var playerDetectionZone: Node = $PlayerDetectionZone
 @onready
-var sprite: Object = $BatSprite
+var sprite: Node = $BatSprite
 @onready
-var hurtbox: Object = $Hurtbox
+var hurtbox: Node = $Hurtbox
+@onready
+var softCollision: Node = $SoftCollision
 
 func _physics_process(delta) -> void:
 	# velocity *= 0.96
@@ -32,6 +34,7 @@ func _physics_process(delta) -> void:
 	match state:
 		BatState.IDLE:
 			velocity = velocity.move_toward(Vector2.ZERO, friction * delta)
+			velocity += softCollision.get_push_vector() * delta * 300
 			move_and_slide()
 			seek_player()
 			pass
@@ -42,6 +45,7 @@ func _physics_process(delta) -> void:
 			if player != null:
 				var direction: Vector2 = (player.global_position - global_position).normalized()
 				velocity = velocity.move_toward(direction * max_speed, acceleration * delta)
+				velocity += softCollision.get_push_vector() * delta * 300
 				move_and_slide()
 			else:
 				state = BatState.IDLE

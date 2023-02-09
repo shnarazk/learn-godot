@@ -1008,10 +1008,12 @@ position = Vector2(268, 42)
 [node name="PlayerStats" parent="." instance=ExtResource("10_sjqh1")]
 
 [node name="healthUI" parent="." node_paths=PackedStringArray("stats") instance=ExtResource("9_3md2h")]
+light_mask = 0
+visibility_layer = 0
 offset_left = 4.0
 offset_top = 4.0
-offset_right = 44.0
-offset_bottom = 44.0
+offset_right = 66.0
+offset_bottom = 18.0
 stats = NodePath("../PlayerStats")
 
 [connection signal="health_changed" from="PlayerStats" to="healthUI" method="_on_player_stats_health_changed"]
