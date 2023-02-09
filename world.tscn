@@ -878,7 +878,8 @@ sources/0 = SubResource("TileSetAtlasSource_f417s")
 
 [node name="GrassBackground" type="Sprite2D" parent="."]
 texture_repeat = 2
-scale = Vector2(0.833333, 0.9375)
+position = Vector2(-183, -158)
+scale = Vector2(1.76302, 2.17578)
 texture = ExtResource("3_mibyk")
 centered = false
 region_enabled = true
@@ -898,12 +899,20 @@ cell_quadrant_size = 32
 format = 2
 layer_0/tile_data = PackedInt32Array(393215, 65536, 3, 524287, 65536, 0, 458752, 65536, 0, 458753, 65536, 0, 458754, 65536, 0, 458755, 393216, 2, 327690, 65536, 1, 327689, 0, 1, 393225, 0, 1, 458761, 393216, 2, 458762, 65536, 1, 393226, 65536, 1, 458760, 0, 0, 524297, 65536, 2, 524296, 393216, 3, 524298, 65536, 2, -65534, 0, 1, 2, 0, 2, 3, 65536, 2, 4, 65536, 2, 5, 65536, 2, -65531, 65536, 1, -65532, 65536, 1, -65533, 65536, 1, 262153, 0, 0, 262154, 65536, 0, 393219, 0, 0, 393220, 131072, 0, 458756, 131072, 1, 524292, 327680, 3, 524291, 65536, 2, 524290, 65536, 2, 524289, 65536, 2, 524288, 65536, 2, 589823, 65536, 2, 6, 131072, 2, -65530, 131072, 1, 327680, 131072, 3, 393214, 262144, 4, 458750, 196608, 1, 524286, 262144, 2, 589822, 0, 2, 524293, 65536, 3, 524294, 65536, 3, 524295, 65536, 3, -131070, 393216, 0, -131071, 65536, 3, -131072, 65536, 3, -65537, 327680, 0, -1, 131072, 2, -2, 262144, 1, 65534, 196608, 1, 131070, 196608, 1, 196606, 196608, 1, 262142, 196608, 1, 327678, 196608, 1, -131069, 65536, 0, -131068, 65536, 0, -131067, 65536, 0, -131066, 327680, 0, -131065, 65536, 3, -131064, 65536, 3, -131063, 393216, 0, -131062, 65536, 0, -131061, 131072, 0, -65525, 131072, 1, 11, 458752, 1, 65547, 196608, 1, 131083, 196608, 1, 196619, 196608, 1, 262155, 458752, 2, 327691, 131072, 1, 393227, 131072, 1, 458763, 131072, 1, 524299, 131072, 2, -65538, 0, 0, -65526, 65536, 1, 9, 0, 2, -65527, 0, 1, 10, 65536, 2)
 
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(116, 76)
+zoom = Vector2(1.25, 1.25)
+position_smoothing_enabled = true
+
 [node name="Stage" type="Node2D" parent="."]
 y_sort_enabled = true
 
 [node name="Player" parent="Stage" node_paths=PackedStringArray("stats") instance=ExtResource("2_ll3rf")]
 position = Vector2(116, 76)
 stats = NodePath("../../PlayerStats")
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Stage/Player"]
+remote_path = NodePath("../../../Camera2D")
 
 [node name="Bushes" type="Node2D" parent="Stage"]
 y_sort_enabled = true
@@ -1007,14 +1016,15 @@ position = Vector2(268, 42)
 
 [node name="PlayerStats" parent="." instance=ExtResource("10_sjqh1")]
 
-[node name="healthUI" parent="." node_paths=PackedStringArray("stats") instance=ExtResource("9_3md2h")]
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="healthUI" parent="CanvasLayer" node_paths=PackedStringArray("stats") instance=ExtResource("9_3md2h")]
 light_mask = 0
-visibility_layer = 0
 offset_left = 4.0
 offset_top = 4.0
 offset_right = 66.0
 offset_bottom = 18.0
-stats = NodePath("../PlayerStats")
+stats = NodePath("../../PlayerStats")
 
-[connection signal="health_changed" from="PlayerStats" to="healthUI" method="_on_player_stats_health_changed"]
+[connection signal="health_changed" from="PlayerStats" to="CanvasLayer/healthUI" method="_on_player_stats_health_changed"]
 [connection signal="no_health" from="PlayerStats" to="Stage/Player" method="_on_player_stats_no_health"]
