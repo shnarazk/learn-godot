@@ -1,5 +1,6 @@
-[gd_scene load_steps=19 format=3 uid="uid://cnt5hkw533qv6"]
+[gd_scene load_steps=20 format=3 uid="uid://cnt5hkw533qv6"]
 
+[ext_resource type="Script" path="res://world.gd" id="1_rimgk"]
 [ext_resource type="PackedScene" uid="uid://bcr2lwb6vx41y" path="res://World/bush.tscn" id="2_2trvq"]
 [ext_resource type="Texture2D" uid="uid://cm8q4smyln551" path="res://World/CliffTileset.png" id="2_b3jb0"]
 [ext_resource type="PackedScene" uid="uid://bcbki7h5t1uyb" path="res://Player/player.tscn" id="2_ll3rf"]
@@ -877,6 +878,7 @@ terrain_set_0/terrain_0/color = Color(0.619608, 0.0705882, 0.615686, 1)
 sources/0 = SubResource("TileSetAtlasSource_f417s")
 
 [node name="World" type="Node2D"]
+script = ExtResource("1_rimgk")
 
 [node name="GrassBackground" type="Sprite2D" parent="."]
 texture_repeat = 2
@@ -1059,6 +1061,7 @@ stream = ExtResource("12_drju8")
 autoplay = true
 
 [connection signal="health_changed" from="PlayerStats" to="CanvasLayer/healthUI" method="_on_player_stats_health_changed"]
+[connection signal="no_health" from="PlayerStats" to="." method="_on_player_stats_no_health"]
 [connection signal="no_health" from="PlayerStats" to="Stage/Player" method="_on_player_stats_no_health"]
 
 [editable path="Camera2D"]

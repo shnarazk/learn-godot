@@ -1,0 +1,41 @@
+[gd_scene load_steps=5 format=3 uid="uid://h622v32cmbp7"]
+
+[ext_resource type="FontFile" uid="uid://cv6n82tngv7sq" path="res://UI/NotoSansCJKjp-DemiLight.otf" id="1_b7opx"]
+
+[sub_resource type="Theme" id="Theme_kvbxw"]
+default_font = ExtResource("1_b7opx")
+default_font_size = 14
+Label/fonts/font = ExtResource("1_b7opx")
+
+[sub_resource type="LabelSettings" id="LabelSettings_uwn4o"]
+font_size = 48
+font_color = Color(1, 0, 0, 1)
+outline_size = 2
+outline_color = Color(0.603922, 0.12549, 0.266667, 1)
+shadow_size = 6
+shadow_color = Color(0.282353, 0.282353, 0.282353, 0.639216)
+
+[sub_resource type="LabelSettings" id="LabelSettings_3xawn"]
+font_size = 20
+font_color = Color(0.282353, 1, 1, 1)
+
+[node name="PlayerDiedLabel" type="Label"]
+offset_left = 67.0
+offset_top = 70.0
+offset_right = 271.0
+offset_bottom = 145.0
+theme = SubResource("Theme_kvbxw")
+text = "You died."
+label_settings = SubResource("LabelSettings_uwn4o")
+horizontal_alignment = 1
+
+[node name="ReplayLabel" type="Label" parent="."]
+layout_mode = 0
+offset_top = 102.0
+offset_right = 204.0
+offset_bottom = 136.0
+theme = SubResource("Theme_kvbxw")
+text = "return to replay"
+label_settings = SubResource("LabelSettings_3xawn")
+horizontal_alignment = 1
+vertical_alignment = 1

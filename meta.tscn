@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://dagunsuedp51m"]
+
+[ext_resource type="Script" path="res://meta.gd" id="1_3nglr"]
+[ext_resource type="PackedScene" uid="uid://h622v32cmbp7" path="res://UI/player_died_label.tscn" id="3_71bmg"]
+
+[node name="Meta" type="Node"]
+script = ExtResource("1_3nglr")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="PlayerDiedLabel" parent="CanvasLayer" instance=ExtResource("3_71bmg")]
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
