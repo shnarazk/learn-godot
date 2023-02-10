@@ -101,8 +101,8 @@ func _on_hurtbox_area_entered(area) -> void:
 func _on_player_stats_no_health() -> void:
 	queue_free()
 
-func _on_hurtbox_invincibility_started():
+func _on_hurtbox_invincibility_started() -> void:
 	blinkAnimationPlayer.play("Start")
 
-func _on_hurtbox_invincibility_ended():
+func _on_hurtbox_invincibility_ended() -> void:
 	blinkAnimationPlayer.play("Stop")

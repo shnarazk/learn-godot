@@ -26,4 +26,4 @@ func _ready():
 
 func _on_player_stats_health_changed(value) -> void:
 	set_hearts(value)
-	print(hearts)
+

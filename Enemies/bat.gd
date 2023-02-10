@@ -31,6 +31,8 @@ var hurtbox: Node = $Hurtbox
 var softCollision: Node = $SoftCollision
 @onready
 var wander_controller: Node = $WanderController
+@onready
+var animationPlayer: Node = $AnimationPlayer
 
 func _ready() -> void:
 	state = pick_random_state([BatState.IDLE, BatState.WANDER])
@@ -81,9 +83,16 @@ func _on_hurtbox_area_entered(area) -> void:
 		stats.health -= area.damage
 		velocity = direction.normalized() * 120
 	hurtbox.create_hit_effect()
+	hurtbox.start_invincibility(0.4)
 
 func _on_stats_no_health() -> void:
 	queue_free()
 	var enemyDeathEffect = EnemyDeaathEffect.instantiate()
 	get_parent().add_child(enemyDeathEffect)
 	enemyDeathEffect.global_position = global_position
+
+func _on_hurtbox_invincibility_started() -> void:
+	animationPlayer.play("Start")
+
+func _on_hurtbox_invincibility_ended() -> void:
+	animationPlayer.play("Stop")
