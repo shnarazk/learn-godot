@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://cnt5hkw533qv6"]
+[gd_scene load_steps=22 format=3 uid="uid://cnt5hkw533qv6"]
 
 [ext_resource type="Script" path="res://world.gd" id="1_rimgk"]
 [ext_resource type="PackedScene" uid="uid://bcr2lwb6vx41y" path="res://World/bush.tscn" id="2_2trvq"]
@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://b68tnuvvqaoub" path="res://UI/health_ui.tscn" id="9_3md2h"]
 [ext_resource type="PackedScene" uid="uid://cs4upjuoqhxg8" path="res://Player/player_stats.tscn" id="10_sjqh1"]
 [ext_resource type="AudioStream" uid="uid://b5jr5seywjapw" path="res://Music and Sounds/Music.mp3" id="12_drju8"]
+[ext_resource type="Script" path="res://UI/treasureCounter.gd" id="14_343m1"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3aefq"]
 texture = ExtResource("2_tkb0r")
@@ -877,6 +878,10 @@ terrain_set_0/terrain_0/name = "cliff 1"
 terrain_set_0/terrain_0/color = Color(0.619608, 0.0705882, 0.615686, 1)
 sources/0 = SubResource("TileSetAtlasSource_f417s")
 
+[sub_resource type="LabelSettings" id="LabelSettings_1w4fd"]
+font_size = 12
+font_color = Color(0.909804, 0.854902, 0.937255, 1)
+
 [node name="World" type="Node2D"]
 script = ExtResource("1_rimgk")
 
@@ -978,16 +983,13 @@ position = Vector2(368, 144)
 [node name="Bush17" parent="Stage/Bushes" instance=ExtResource("2_2trvq")]
 position = Vector2(-48, 48)
 
-[node name="Bush" parent="Stage" instance=ExtResource("2_2trvq")]
+[node name="Bush18" parent="Stage/Bushes" instance=ExtResource("2_2trvq")]
 position = Vector2(392, -32)
 
 [node name="Grass" type="Node2D" parent="Stage"]
 y_sort_enabled = true
 
-[node name="Grass4" parent="Stage/Grass" instance=ExtResource("7_7wky0")]
-position = Vector2(224, 8)
-
-[node name="Grass" parent="Stage/Grass" instance=ExtResource("7_7wky0")]
+[node name="Grass1" parent="Stage/Grass" instance=ExtResource("7_7wky0")]
 position = Vector2(144, 80)
 
 [node name="Grass2" parent="Stage/Grass" instance=ExtResource("7_7wky0")]
@@ -995,6 +997,9 @@ position = Vector2(268, 67)
 
 [node name="Grass3" parent="Stage/Grass" instance=ExtResource("7_7wky0")]
 position = Vector2(48, 16)
+
+[node name="Grass4" parent="Stage/Grass" instance=ExtResource("7_7wky0")]
+position = Vector2(224, 8)
 
 [node name="Grass5" parent="Stage/Grass" instance=ExtResource("7_7wky0")]
 position = Vector2(115, 131)
@@ -1062,11 +1067,31 @@ offset_right = 66.0
 offset_bottom = 18.0
 stats = NodePath("../../PlayerStats")
 
+[node name="treasureCounter" type="Label" parent="CanvasLayer" node_paths=PackedStringArray("stats")]
+offset_left = 112.0
+offset_right = 152.0
+offset_bottom = 23.0
+label_settings = SubResource("LabelSettings_1w4fd")
+script = ExtResource("14_343m1")
+stats = NodePath("../../PlayerStats")
+
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 position = Vector2(146, 136)
 stream = ExtResource("12_drju8")
 autoplay = true
 
+[connection signal="unearth_treasure" from="Stage/Grass/Grass1" to="CanvasLayer/treasureCounter" method="_on_grass_unearth_treasure"]
+[connection signal="unearth_treasure" from="Stage/Grass/Grass2" to="CanvasLayer/treasureCounter" method="_on_grass_unearth_treasure"]
+[connection signal="unearth_treasure" from="Stage/Grass/Grass3" to="CanvasLayer/treasureCounter" method="_on_grass_unearth_treasure"]
+[connection signal="unearth_treasure" from="Stage/Grass/Grass4" to="CanvasLayer/treasureCounter" method="_on_grass_unearth_treasure"]
+[connection signal="unearth_treasure" from="Stage/Grass/Grass5" to="CanvasLayer/treasureCounter" method="_on_grass_unearth_treasure"]
+[connection signal="unearth_treasure" from="Stage/Grass/Grass6" to="CanvasLayer/treasureCounter" method="_on_grass_unearth_treasure"]
+[connection signal="unearth_treasure" from="Stage/Grass/Grass7" to="CanvasLayer/treasureCounter" method="_on_grass_unearth_treasure"]
+[connection signal="unearth_treasure" from="Stage/Grass/Grass8" to="CanvasLayer/treasureCounter" method="_on_grass_unearth_treasure"]
+[connection signal="unearth_treasure" from="Stage/Grass/Grass9" to="CanvasLayer/treasureCounter" method="_on_grass_unearth_treasure"]
+[connection signal="unearth_treasure" from="Stage/Grass/Grass10" to="CanvasLayer/treasureCounter" method="_on_grass_unearth_treasure"]
+[connection signal="unearth_treasure" from="Stage/Grass/Grass11" to="CanvasLayer/treasureCounter" method="_on_grass_unearth_treasure"]
+[connection signal="unearth_treasure" from="Stage/Grass/Grass12" to="CanvasLayer/treasureCounter" method="_on_grass_unearth_treasure"]
 [connection signal="health_changed" from="PlayerStats" to="CanvasLayer/healthUI" method="_on_player_stats_health_changed"]
 [connection signal="no_health" from="PlayerStats" to="." method="_on_player_stats_no_health"]
 [connection signal="no_health" from="PlayerStats" to="Stage/Player" method="_on_player_stats_no_health"]
