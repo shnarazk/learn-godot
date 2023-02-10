@@ -963,6 +963,18 @@ position = Vector2(16, 72)
 [node name="Bush13" parent="Stage/Bushes" instance=ExtResource("2_2trvq")]
 position = Vector2(0, 112)
 
+[node name="Bush14" parent="Stage/Bushes" instance=ExtResource("2_2trvq")]
+position = Vector2(-64, 160)
+
+[node name="Bush15" parent="Stage/Bushes" instance=ExtResource("2_2trvq")]
+position = Vector2(88, -16)
+
+[node name="Bush16" parent="Stage/Bushes" instance=ExtResource("2_2trvq")]
+position = Vector2(368, 144)
+
+[node name="Bush17" parent="Stage/Bushes" instance=ExtResource("2_2trvq")]
+position = Vector2(-48, 48)
+
 [node name="Grass" type="Node2D" parent="Stage"]
 y_sort_enabled = true
 
@@ -996,6 +1008,12 @@ position = Vector2(7, 73)
 [node name="Grass10" parent="Stage/Grass" instance=ExtResource("7_7wky0")]
 position = Vector2(240, 224)
 
+[node name="Grass11" parent="Stage/Grass" instance=ExtResource("7_7wky0")]
+position = Vector2(-80, 80)
+
+[node name="Grass12" parent="Stage/Grass" instance=ExtResource("7_7wky0")]
+position = Vector2(336, 176)
+
 [node name="Trees" type="Node2D" parent="Stage"]
 y_sort_enabled = true
 
@@ -1007,6 +1025,9 @@ position = Vector2(232, 208)
 
 [node name="Tree3" parent="Stage/Trees" instance=ExtResource("8_oyn67")]
 position = Vector2(96, 168)
+
+[node name="Tree4" parent="Stage/Trees" instance=ExtResource("8_oyn67")]
+position = Vector2(56, 248)
 
 [node name="Bat" parent="Stage" instance=ExtResource("8_tkuon")]
 position = Vector2(165, 158)

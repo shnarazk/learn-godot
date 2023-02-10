@@ -8,14 +8,14 @@ radius = 12.0
 
 [node name="Tree" type="StaticBody2D"]
 
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -8)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_ewa57")
+
 [node name="Shadow" type="Sprite2D" parent="."]
 texture = ExtResource("1_adko2")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, -18)
 texture = ExtResource("1_885y8")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D"]
-position = Vector2(0, 10)
-rotation = 1.5708
-shape = SubResource("CapsuleShape2D_ewa57")
