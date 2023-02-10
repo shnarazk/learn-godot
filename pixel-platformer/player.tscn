@@ -1,0 +1,35 @@
+[gd_scene load_steps=6 format=3 uid="uid://digd7p4lmoinv"]
+
+[ext_resource type="Texture2D" uid="uid://qfv1y0httbqy" path="res://characters_packed.png" id="1_82s7s"]
+[ext_resource type="Script" path="res://player.gd" id="1_yogxm"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4t7xm"]
+atlas = ExtResource("1_82s7s")
+region = Rect2(0, 0, 24, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_73sxm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4t7xm")
+}],
+"loop": true,
+"name": &"Idol",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_edibv"]
+size = Vector2(14, 18)
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_yogxm")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_73sxm")
+animation = &"Idol"
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 3)
+shape = SubResource("RectangleShape2D_edibv")
