@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://dwlpfskjar752"]
+
+[ext_resource type="Script" path="res://camera_2d.gd" id="1_cdclx"]
+
+[node name="Camera2D" type="Camera2D"]
+position = Vector2(646, 492)
+position_smoothing_enabled = true
+script = ExtResource("1_cdclx")
+
+[node name="Boundary" type="Node" parent="."]
+
+[node name="TopLeft" type="Marker2D" parent="Boundary"]
+position = Vector2(10, -3)
+
+[node name="BottomRight" type="Marker2D" parent="Boundary"]
+position = Vector2(1276, 968)

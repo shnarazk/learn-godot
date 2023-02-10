@@ -15,6 +15,8 @@ var invincible: bool = false:
 
 @onready
 var timer: Object = $Timer
+@onready
+var collisionShape: Node = $CollisionShape2D
 
 func start_invincibility(duration: float) -> void:
 	self.invincible = true
@@ -29,7 +31,9 @@ func _on_timer_timeout() -> void:
 	self.invincible = false
 
 func _on_invincibility_started() -> void:
-	set_deferred("monitoring", false)
+	collisionShape.set_deferred("disabled", true)
+	# set_deferred("monitoring", false)
 
 func _on_invincibility_ended() -> void:
-	monitoring = true
+	collisionShape.disabled = false
+	# monitoring = true
