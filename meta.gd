@@ -7,8 +7,6 @@ const World: PackedScene = preload("res://world.tscn")
 @onready
 var replay_labels: Node = $CanvasLayer/PlayerDiedLabel
 @onready
-var world: Node = $World
-@onready
 var restart_timer: Node = $Timer
 var current_world: Node
 

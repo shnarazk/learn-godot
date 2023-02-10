@@ -3,7 +3,6 @@
 [ext_resource type="Script" path="res://camera_2d.gd" id="1_cdclx"]
 
 [node name="Camera2D" type="Camera2D"]
-position = Vector2(646, 492)
 position_smoothing_enabled = true
 script = ExtResource("1_cdclx")
 
