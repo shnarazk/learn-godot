@@ -20,7 +20,7 @@ func new_game() -> void:
 	current_world = World.instantiate()
 	current_world.connect("game_ended", self._on_world_game_ended)
 	add_child(current_world)
-	
+
 func _on_timer_timeout() -> void:
 	remove_child(current_world)
 	new_game()

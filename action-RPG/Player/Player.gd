@@ -39,7 +39,7 @@ func _physics_process(_delta: float) -> void:
 			attack_state()
 		State.ROLL:
 			roll_state()
-	
+
 func move_state() -> void:
 	var input_vector = Vector2.ZERO
 	# if Input.is_action_just_pressed("ui_accept") and is_on_floor():
@@ -64,22 +64,22 @@ func move_state() -> void:
 		state = State.ATTACK
 	if Input.is_action_just_pressed("roll"):
 		state = State.ROLL
-	
+
 func move() -> void:
 	move_and_slide()
 
 func attack_state() -> void:
 	velocity = Vector2.ZERO
 	animationState.travel("Attack")
-	
+
 func roll_state() -> void:
 	velocity = roll_vector * ROLL_SPEED
 	animationState.travel("Roll")
 	move()
-	
+
 func attack_animation_finished() -> void:
 	state = State.MOVE
-	
+
 func roll_animation_finished() -> void:
 	velocity /= 2
 	state = State.MOVE

@@ -16,7 +16,7 @@ var max_speed: float = 50.0
 var friction: float = 200.0
 @export
 var wander_target_range: float = 4.0
- 
+
 var state: BatState = BatState.IDLE
 
 @onready

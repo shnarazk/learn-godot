@@ -11,10 +11,10 @@ func set_value(value: int) -> void:
 	text = "treasure: " + str(count)
 	if count == max_treasure:
 		text = "ALL treasures found!"
-	
+
 func increment() -> void:
 	set_value(count + 1)
-	
+
 func _ready():
 	set_value(0)
 	stats.connect("got_treasure", self.increment)

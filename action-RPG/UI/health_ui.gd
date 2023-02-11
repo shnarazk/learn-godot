@@ -17,7 +17,7 @@ func set_hearts(value) -> void:
 	hearts = min(max_hearts, value)
 	# label.text = "HP: " + str(hearts)
 	heartFull.size.x = hearts * 15
-	
+
 func _ready():
 	max_hearts = stats.max_health
 	heartEmpty.size.x = max_hearts * 15
