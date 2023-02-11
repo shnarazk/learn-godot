@@ -10,7 +10,8 @@ config_version=5
 
 [application]
 
-config/name="pixel-platformer"
+config/name="Learning Pixel Platformer"
+config/description="The product along HeartBeast's Pixel Platformer Tutorial"
 run/main_scene="res://world.tscn"
 config/features=PackedStringArray("4.0", "Forward Plus")
 config/icon="res://icon.svg"
@@ -22,3 +23,7 @@ window/size/viewport_height=720
 window/stretch/mode="viewport"
 window/stretch/aspect="expand"
 window/stretch/scale=3.0
+
+[rendering]
+
+textures/canvas_textures/default_texture_filter=0
