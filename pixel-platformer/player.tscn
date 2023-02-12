@@ -58,7 +58,7 @@ script = ExtResource("1_yogxm")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_73sxm")
-animation = &"Jump"
+animation = &"Run"
 autoplay = "Idle"
 flip_h = true
 
