@@ -22,7 +22,7 @@ window/size/viewport_width=1280
 window/size/viewport_height=720
 window/stretch/mode="viewport"
 window/stretch/aspect="expand"
-window/stretch/scale=3.0
+window/stretch/scale=2.0
 
 [rendering]
 
