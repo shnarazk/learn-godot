@@ -1,4 +1,5 @@
 extends CharacterBody2D
+class_name Player
 
 @export
 var SPEED         : float = 40.0
