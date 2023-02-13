@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://6aelox1iknne" path="res://tiles_packed.png" id="1_c4unk"]
 
 [node name="Spikes" type="Area2D"]
+collision_mask = 2
 script = ExtResource("1_4be2j")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]

@@ -32,9 +32,9 @@ func _physics_process(delta) -> void:
 		if Input.is_action_just_released("ui_accept") and velocity.y < -10.0:
 			velocity.y *= AIR_BREAK
 	move_and_slide()
-	if was_in_air: 
+	if was_in_air:
 		if is_on_floor():
 			animatedSprite.animation = "Run"
 			animatedSprite.frame = 1
-		else: 
+		else:
 			animatedSprite.animation = "Jump"
