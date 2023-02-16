@@ -70,3 +70,10 @@ position = Vector2(0, 3)
 shape = SubResource("RectangleShape2D_edibv")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="LadderCheck" type="RayCast2D" parent="."]
+position = Vector2(0, -3)
+target_position = Vector2(0, 20)
+hit_from_inside = true
+collide_with_areas = true
+collide_with_bodies = false
