@@ -1,8 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://digd7p4lmoinv"]
+[gd_scene load_steps=11 format=3 uid="uid://digd7p4lmoinv"]
 
 [ext_resource type="Texture2D" uid="uid://qfv1y0httbqy" path="res://characters_packed.png" id="1_82s7s"]
 [ext_resource type="Script" path="res://player.gd" id="1_yogxm"]
 [ext_resource type="Resource" uid="uid://bjnmijwhmf4s0" path="res://default_player_movement_data.tres" id="2_hn3og"]
+[ext_resource type="PackedScene" uid="uid://br2asjjsn8ioa" path="res://girl_sprite.tscn" id="4_sh67b"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4t7xm"]
 atlas = ExtResource("1_82s7s")
@@ -77,3 +78,21 @@ target_position = Vector2(0, 20)
 hit_from_inside = true
 collide_with_areas = true
 collide_with_bodies = false
+
+[node name="JumpBufferTimer" type="Timer" parent="."]
+wait_time = 0.1
+one_shot = true
+
+[node name="girlSprite" parent="." instance=ExtResource("4_sh67b")]
+visible = false
+position = Vector2(0, -4)
+animation = &"down"
+
+[node name="CoyoteJumpTimer" type="Timer" parent="."]
+wait_time = 0.2
+one_shot = true
+
+[connection signal="timeout" from="JumpBufferTimer" to="." method="_on_jump_buffer_timer_timeout"]
+[connection signal="timeout" from="CoyoteJumpTimer" to="." method="_on_coyote_jump_timer_timeout"]
+
+[editable path="girlSprite"]
