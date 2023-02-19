@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://docj252qi86k2"]
+
+[ext_resource type="Texture2D" uid="uid://qfv1y0httbqy" path="res://characters_packed.png" id="1_ns0tn"]
+[ext_resource type="PackedScene" uid="uid://bnewbl6vetevc" path="res://hitbox.tscn" id="2_rvn1h"]
+
+[sub_resource type="Curve2D" id="Curve2D_dcbtm"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_lj7x0"]
+radius = 9.0
+
+[node name="MovingSpikeEnemy" type="Path2D"]
+curve = SubResource("Curve2D_dcbtm")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="."]
+rotates = false
+
+[node name="Enemy" type="Node2D" parent="PathFollow2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="PathFollow2D/Enemy"]
+texture = ExtResource("1_ns0tn")
+region_enabled = true
+region_rect = Rect2(192, 0, 24, 24)
+
+[node name="Hitbox" parent="PathFollow2D/Enemy" instance=ExtResource("2_rvn1h")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PathFollow2D/Enemy/Hitbox"]
+shape = SubResource("CircleShape2D_lj7x0")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
