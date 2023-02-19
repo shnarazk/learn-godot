@@ -69,7 +69,7 @@ func move_state(delta: float, input: Vector2) -> void:
 			else:
 				buffered_jump = true
 				jump_buffer_timer.start()
-			
+
 	move_and_slide()
 	var just_left_ground: bool = not is_on_floor() and was_on_floor
 	if just_left_ground and 0 <= velocity.y:
@@ -98,7 +98,7 @@ func climb_state(_delta: float, input: Vector2) -> void:
 	move_and_slide()
 	if input.length() != 0:
 		animatedSprite.animation = "Run"
-	else: 
+	else:
 		animatedSprite.animation = "Idle"
 
 func _on_jump_buffer_timer_timeout():
