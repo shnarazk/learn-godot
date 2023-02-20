@@ -1,17 +1,63 @@
-[gd_scene load_steps=5 format=3 uid="uid://docj252qi86k2"]
+[gd_scene load_steps=9 format=3 uid="uid://docj252qi86k2"]
 
+[ext_resource type="Script" path="res://moving_spike_enemy.gd" id="1_jt6rq"]
 [ext_resource type="Texture2D" uid="uid://qfv1y0httbqy" path="res://characters_packed.png" id="1_ns0tn"]
 [ext_resource type="PackedScene" uid="uid://bnewbl6vetevc" path="res://hitbox.tscn" id="2_rvn1h"]
 
 [sub_resource type="Curve2D" id="Curve2D_dcbtm"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -59, -3, 0, 0, 0, 0, -60, -23, 0, 0, 0, 0, -116, -24, 0, 0, 0, 0, -115, 71, 0, 0, 0, 0, -80, 71, 0, 0, 0, 0, -80, 87, 0, 0, 0, 0, -40, 87, 0, 0, 0, 0, -40, 111, 0, 0, 0, 0, 8, 111, 0, 0, 0, 0, 8, 55, 0, 0, 0, 0, 88, 15, 0, 0, 0, 0, 120, 15, 0, 0, 0, 0, 120, -41, 0, 0, 0, 0, 48, -41, 0, 0, 0, 0, 16, -1, 0, 0, 0, 0, -58.5833, -2.24325, 0, 0, 0, 0, -59, -3)
+}
+point_count = 17
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_lj7x0"]
 radius = 9.0
 
+[sub_resource type="Animation" id="Animation_7w3ll"]
+resource_name = "MovingAlongPathLoop"
+length = 14.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PathFollow2D:progress_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 14),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+
+[sub_resource type="Animation" id="Animation_dmbkf"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PathFollow2D:progress_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_37nxm"]
+_data = {
+"MovingAlongPathLoop": SubResource("Animation_7w3ll"),
+"RESET": SubResource("Animation_dmbkf")
+}
+
 [node name="MovingSpikeEnemy" type="Path2D"]
 curve = SubResource("Curve2D_dcbtm")
+script = ExtResource("1_jt6rq")
+animation_type = 0
 
 [node name="PathFollow2D" type="PathFollow2D" parent="."]
+position = Vector2(-59, -3)
 rotates = false
 
 [node name="Enemy" type="Node2D" parent="PathFollow2D"]
@@ -27,3 +73,7 @@ region_rect = Rect2(192, 0, 24, 24)
 shape = SubResource("CircleShape2D_lj7x0")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "MovingAlongPathLoop"
+libraries = {
+"": SubResource("AnimationLibrary_37nxm")
+}
