@@ -17,7 +17,7 @@ var jump_buffer_timer: Node = $JumpBufferTimer
 @onready
 var coyote_jump_timer: Node = $CoyoteJumpTimer
 @onready
-var audioStreamPlayer: Node = $AudioStreamPlayer
+var remoteTransform2D: Node = $RemoteTransform2D
 
 var state: State = State.MOVE
 var double_jump: int
@@ -112,7 +112,12 @@ func climb_state(_delta: float, input: Vector2) -> void:
 
 func player_die() -> void:
 	SoundPlayer.play_sound(SoundPlayer.HURT)
-	get_tree().reload_current_scene()
+	Events.emit_signal("player_died")
+	queue_free()
+
+func connect_camera(camera: Node) -> void:
+	var camera_path = camera.get_path()
+	remoteTransform2D.remote_path = camera_path
 
 func _on_jump_buffer_timer_timeout():
 	buffered_jump = false

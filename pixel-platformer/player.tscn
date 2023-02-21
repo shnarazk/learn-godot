@@ -61,32 +61,34 @@ moveData = ExtResource("2_hn3og")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
+position = Vector2(0, -12)
 sprite_frames = SubResource("SpriteFrames_73sxm")
 animation = &"Run"
 autoplay = "Idle"
 flip_h = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 3)
+position = Vector2(0, -9)
 shape = SubResource("RectangleShape2D_edibv")
 
-[node name="Camera2D" type="Camera2D" parent="."]
-
 [node name="LadderCheck" type="RayCast2D" parent="."]
-position = Vector2(0, -3)
+position = Vector2(0, -15)
 target_position = Vector2(0, 20)
 hit_from_inside = true
 collide_with_areas = true
 collide_with_bodies = false
 
-[node name="JumpBufferTimer" type="Timer" parent="."]
-wait_time = 0.1
-one_shot = true
-
 [node name="girlSprite" parent="." instance=ExtResource("4_sh67b")]
 visible = false
 position = Vector2(0, -4)
 animation = &"down"
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="."]
+position = Vector2(0, -12)
+
+[node name="JumpBufferTimer" type="Timer" parent="."]
+wait_time = 0.1
+one_shot = true
 
 [node name="CoyoteJumpTimer" type="Timer" parent="."]
 wait_time = 0.2
