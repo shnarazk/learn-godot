@@ -16,6 +16,8 @@ var ladderCheck: Node = $LadderCheck
 var jump_buffer_timer: Node = $JumpBufferTimer
 @onready
 var coyote_jump_timer: Node = $CoyoteJumpTimer
+@onready
+var audioStreamPlayer: Node = $AudioStreamPlayer
 
 var state: State = State.MOVE
 var double_jump: int
@@ -31,6 +33,7 @@ func _ready() -> void:
 
 func _physics_process(delta) -> void:
 	var input: Vector2 = Vector2(Input.get_axis("ui_left", "ui_right"), Input.get_axis("ui_up", "ui_down"))
+
 	match state:
 		State.MOVE:
 			move_state(delta, input)
@@ -43,6 +46,7 @@ func is_on_ladder() -> bool:
 func move_state(delta: float, input: Vector2) -> void:
 	if is_on_ladder() and 0 != input.y:
 		state = State.CLIMB
+		return
 	var was_in_air: bool = not is_on_floor()
 	var was_on_floor: bool = is_on_floor()
 	if input.length() != 0:
@@ -58,6 +62,7 @@ func move_state(delta: float, input: Vector2) -> void:
 		if Input.is_action_just_pressed("ui_up") or buffered_jump:
 			velocity.y = -moveData.JUMP_VELOCITY
 			buffered_jump = false
+			SoundPlayer.play_sound(SoundPlayer.JUMP)
 	else:
 		velocity.y += gravity * delta
 		if Input.is_action_just_released("ui_up") and velocity.y < -10.0:
@@ -66,6 +71,7 @@ func move_state(delta: float, input: Vector2) -> void:
 			if 0 < double_jump:
 				velocity.y = -moveData.JUMP_VELOCITY
 				double_jump -= 1
+				SoundPlayer.play_sound(SoundPlayer.JUMP)
 			else:
 				buffered_jump = true
 				jump_buffer_timer.start()
@@ -90,16 +96,23 @@ func move_state(delta: float, input: Vector2) -> void:
 			girlSprite.play("down")
 		elif velocity.y < 0:
 			girlSprite.play("up")
+	if 800 < position.y:
+		player_die()
 
 func climb_state(_delta: float, input: Vector2) -> void:
 	if not is_on_ladder():
 		state = State.MOVE
+		return
 	velocity = input * moveData.SPEED
 	move_and_slide()
 	if input.length() != 0:
 		animatedSprite.animation = "Run"
 	else:
 		animatedSprite.animation = "Idle"
+
+func player_die() -> void:
+	SoundPlayer.play_sound(SoundPlayer.HURT)
+	get_tree().reload_current_scene()
 
 func _on_jump_buffer_timer_timeout():
 	buffered_jump = false

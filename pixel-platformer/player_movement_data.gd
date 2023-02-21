@@ -6,7 +6,7 @@ class_name PlayerMovementData
 var SPEED         : float = 40.0
 ## lifting power by jumping
 @export
-var JUMP_VELOCITY : float = 300.0
+var JUMP_VELOCITY : float = 360.0
 ## negative force power applied when jump button is released
 @export
 var AIR_BREAK     : float = 0.25
