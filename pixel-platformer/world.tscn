@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://cc1lnsof2ftoo"]
+[gd_scene load_steps=11 format=3 uid="uid://cc1lnsof2ftoo"]
 
 [ext_resource type="Script" path="res://world.gd" id="1_8amaj"]
 [ext_resource type="PackedScene" uid="uid://ge88g24bmndf" path="res://tile_map.tscn" id="1_u1ajw"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://x2a3af2apqvs" path="res://ladder.tscn" id="6_w1hqx"]
 [ext_resource type="PackedScene" uid="uid://docj252qi86k2" path="res://moving_spike_enemy.tscn" id="7_rn2pa"]
 [ext_resource type="PackedScene" uid="uid://ho3cslqp5uh7" path="res://checkpoint.tscn" id="8_ulkb2"]
+[ext_resource type="PackedScene" uid="uid://byim44j73knmx" path="res://stomp_enemy.tscn" id="9_cd5mw"]
 
 [sub_resource type="Curve2D" id="Curve2D_dfixm"]
 _data = {
@@ -59,8 +60,8 @@ curve = SubResource("Curve2D_dfixm")
 speed = 3.0
 
 [node name="PathFollow2D" parent="MovingSpikeEnemy2" index="0"]
-position = Vector2(96.2101, 101.054)
-progress = 187.217
+position = Vector2(96.2588, 101.054)
+progress = 187.259
 
 [node name="AnimationPlayer" parent="MovingSpikeEnemy2" index="1"]
 speed_scale = 3.0
@@ -71,5 +72,8 @@ speed_scale = 3.0
 position = Vector2(424, 304)
 
 [node name="Timer" type="Timer" parent="."]
+
+[node name="StompEnemy" parent="." instance=ExtResource("9_cd5mw")]
+position = Vector2(306, 252)
 
 [editable path="MovingSpikeEnemy2"]

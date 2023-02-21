@@ -44,7 +44,8 @@ func is_on_ladder() -> bool:
 	return ladderCheck.is_colliding() and ladderCheck.get_collider() is Ladder
 
 func move_state(delta: float, input: Vector2) -> void:
-	if is_on_ladder() and 0 != input.y:
+	# if is_on_ladder() and 0 != input.y:
+	if is_on_ladder() and Input.is_action_just_pressed("ui_up"):
 		state = State.CLIMB
 		return
 	var was_in_air: bool = not is_on_floor()
