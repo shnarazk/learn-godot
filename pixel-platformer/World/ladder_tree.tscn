@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://e3fpmvawd0x4"]
+
+[ext_resource type="Script" path="res://World/ladder_tree.gd" id="1_6mjji"]
+[ext_resource type="Texture2D" uid="uid://6aelox1iknne" path="res://Textures/tiles_packed.png" id="2_0ojjp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sqbvf"]
+size = Vector2(12, 54)
+
+[node name="LadderTree" type="Area2D"]
+collision_mask = 0
+script = ExtResource("1_6mjji")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -54)
+texture = ExtResource("2_0ojjp")
+centered = false
+region_enabled = true
+region_rect = Rect2(288, 72, 18, 54)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(9, -27)
+shape = SubResource("RectangleShape2D_sqbvf")

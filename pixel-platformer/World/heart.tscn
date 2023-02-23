@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://dx43ak3n63frp"]
+
+[ext_resource type="Texture2D" uid="uid://6aelox1iknne" path="res://Textures/tiles_packed.png" id="1_asp1y"]
+
+[node name="Heart" type="Area2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_asp1y")
+region_enabled = true
+region_rect = Rect2(72, 36, 18, 18)
