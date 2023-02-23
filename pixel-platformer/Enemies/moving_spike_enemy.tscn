@@ -1,8 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://docj252qi86k2"]
+[gd_scene load_steps=9 format=3 uid="uid://dit2s4fmh4dt5"]
 
-[ext_resource type="Script" path="res://moving_spike_enemy.gd" id="1_jt6rq"]
-[ext_resource type="Texture2D" uid="uid://qfv1y0httbqy" path="res://characters_packed.png" id="1_ns0tn"]
-[ext_resource type="PackedScene" uid="uid://bnewbl6vetevc" path="res://hitbox.tscn" id="2_rvn1h"]
+[ext_resource type="Script" path="res://Enemies/moving_spike_enemy.gd" id="1_jt6rq"]
+[ext_resource type="Texture2D" uid="uid://qfv1y0httbqy" path="res://Textures/characters_packed.png" id="2_sbbc6"]
+[ext_resource type="PackedScene" uid="uid://dcblkj224sjeg" path="res://Hitboxes/hitbox.tscn" id="3_drbeg"]
 
 [sub_resource type="Curve2D" id="Curve2D_dcbtm"]
 _data = {
@@ -54,20 +54,20 @@ _data = {
 [node name="MovingSpikeEnemy" type="Path2D"]
 curve = SubResource("Curve2D_dcbtm")
 script = ExtResource("1_jt6rq")
-animation_type = 0
 
 [node name="PathFollow2D" type="PathFollow2D" parent="."]
-position = Vector2(-59, -3)
+position = Vector2(-115.482, 25.2535)
+progress = 125.289
 rotates = false
 
 [node name="Enemy" type="Node2D" parent="PathFollow2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="PathFollow2D/Enemy"]
-texture = ExtResource("1_ns0tn")
+texture = ExtResource("2_sbbc6")
 region_enabled = true
 region_rect = Rect2(192, 0, 24, 24)
 
-[node name="Hitbox" parent="PathFollow2D/Enemy" instance=ExtResource("2_rvn1h")]
+[node name="Hitbox" parent="PathFollow2D/Enemy" instance=ExtResource("3_drbeg")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PathFollow2D/Enemy/Hitbox"]
 shape = SubResource("CircleShape2D_lj7x0")

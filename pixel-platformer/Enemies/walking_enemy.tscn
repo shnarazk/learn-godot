@@ -1,8 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://deil4c8ofyhhf"]
+[gd_scene load_steps=8 format=3]
 
-[ext_resource type="Script" path="res://walking_enemy.gd" id="1_usx8p"]
-[ext_resource type="Texture2D" uid="uid://qfv1y0httbqy" path="res://characters_packed.png" id="1_v2ty7"]
-[ext_resource type="PackedScene" uid="uid://bnewbl6vetevc" path="res://hitbox.tscn" id="3_w1fmu"]
+[ext_resource type="Script" path="res://Enemies/walking_enemy.gd" id="1_usx8p"]
+[ext_resource type="Texture2D" uid="uid://qfv1y0httbqy" path="res://Textures/characters_packed.png" id="1_v2ty7"]
+[ext_resource type="PackedScene" uid="uid://dcblkj224sjeg" path="res://Hitboxes/hitbox.tscn" id="3_w1fmu"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1wj25"]
 atlas = ExtResource("1_v2ty7")

@@ -1,24 +1,24 @@
-[gd_scene load_steps=11 format=3 uid="uid://digd7p4lmoinv"]
+[gd_scene load_steps=11 format=3 uid="uid://c6fusqt28tv2u"]
 
-[ext_resource type="Texture2D" uid="uid://qfv1y0httbqy" path="res://characters_packed.png" id="1_82s7s"]
-[ext_resource type="Script" path="res://player.gd" id="1_yogxm"]
-[ext_resource type="Resource" uid="uid://bjnmijwhmf4s0" path="res://default_player_movement_data.tres" id="2_hn3og"]
-[ext_resource type="PackedScene" uid="uid://br2asjjsn8ioa" path="res://girl_sprite.tscn" id="4_sh67b"]
+[ext_resource type="Script" path="res://Player/player.gd" id="1_yogxm"]
+[ext_resource type="Resource" path="res://Player/default_player_movement_data.tres" id="2_hn3og"]
+[ext_resource type="Texture2D" uid="uid://qfv1y0httbqy" path="res://Textures/characters_packed.png" id="3_cw3rl"]
+[ext_resource type="PackedScene" path="res://Textures/girl_sprite.tscn" id="4_sh67b"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4t7xm"]
-atlas = ExtResource("1_82s7s")
+atlas = ExtResource("3_cw3rl")
 region = Rect2(0, 0, 24, 24)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gse6s"]
-atlas = ExtResource("1_82s7s")
+atlas = ExtResource("3_cw3rl")
 region = Rect2(24, 0, 24, 24)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_m7awj"]
-atlas = ExtResource("1_82s7s")
+atlas = ExtResource("3_cw3rl")
 region = Rect2(24, 0, 24, 24)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_limv2"]
-atlas = ExtResource("1_82s7s")
+atlas = ExtResource("3_cw3rl")
 region = Rect2(0, 0, 24, 24)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_73sxm"]

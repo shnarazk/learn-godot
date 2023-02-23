@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c08u7nhj4x2tc"
-path="res://.godot/imported/yuhina002.png-e065833011585718b549615417caafd5.ctex"
+uid="uid://qfv1y0httbqy"
+path="res://.godot/imported/characters_packed.png-76884ca961378d7c64a8b2fd03492557.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://yuhina002.png"
-dest_files=["res://.godot/imported/yuhina002.png-e065833011585718b549615417caafd5.ctex"]
+source_file="res://Textures/characters_packed.png"
+dest_files=["res://.godot/imported/characters_packed.png-76884ca961378d7c64a8b2fd03492557.ctex"]
 
 [params]
 
@@ -23,7 +23,7 @@ compress/normal_map=0
 compress/channel_pack=0
 mipmaps/generate=false
 mipmaps/limit=-1
-roughness/mode=0
+roughness/mode=1
 roughness/src_normal=""
 process/fix_alpha_border=true
 process/premult_alpha=false
