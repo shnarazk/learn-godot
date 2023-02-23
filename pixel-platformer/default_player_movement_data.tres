@@ -4,7 +4,7 @@
 
 [resource]
 script = ExtResource("1_l37qc")
-SPEED = 40.0
-JUMP_VELOCITY = 360.0
+SPEED = 80.0
+JUMP_VELOCITY = 380.0
 AIR_BREAK = 0.25
 DOUBLE_JUMP = 1

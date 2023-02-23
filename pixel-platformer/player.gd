@@ -55,7 +55,7 @@ func move_state(delta: float, input: Vector2) -> void:
 		animatedSprite.animation = "Run"
 		animatedSprite.flip_h = 0 < velocity.x
 	else:
-		velocity.x = move_toward(velocity.x, 0, moveData.SPEED)
+		velocity.x = move_toward(velocity.x, 0, 4 * moveData.SPEED * delta)
 		animatedSprite.animation = "Idle"
 	if is_on_floor():
 		double_jump = moveData.DOUBLE_JUMP

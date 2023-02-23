@@ -60,7 +60,7 @@ curve = SubResource("Curve2D_dfixm")
 speed = 3.0
 
 [node name="PathFollow2D" parent="MovingSpikeEnemy2" index="0"]
-position = Vector2(96.2588, 101.054)
+position = Vector2(96.2591, 101.054)
 progress = 187.259
 
 [node name="AnimationPlayer" parent="MovingSpikeEnemy2" index="1"]
