@@ -18,6 +18,7 @@ func _ready():
 	Events.connect("hit_checkpoint", self._on_hit_checkpoint)
 	player_spawn_position = player.global_position
 #	print(player_spawn_position)
+	LevelTransitions.play_enter_transition()
 
 func _on_player_died() -> void:
 	timer.start(1.0)

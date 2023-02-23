@@ -3,12 +3,12 @@
 [ext_resource type="Script" path="res://Levels/level.gd" id="1_b7sjq"]
 [ext_resource type="PackedScene" path="res://World/tile_map.tscn" id="2_dvn1v"]
 [ext_resource type="PackedScene" path="res://Enemies/spikes.tscn" id="3_ir4qn"]
-[ext_resource type="PackedScene" path="res://Player/player.tscn" id="3_trs37"]
+[ext_resource type="PackedScene" uid="uid://c6fusqt28tv2u" path="res://Player/player.tscn" id="3_trs37"]
 [ext_resource type="PackedScene" path="res://Enemies/walking_enemy.tscn" id="4_fnuft"]
 [ext_resource type="PackedScene" uid="uid://dit2s4fmh4dt5" path="res://Enemies/moving_spike_enemy.tscn" id="6_y8unn"]
 [ext_resource type="PackedScene" path="res://Enemies/stomp_enemy.tscn" id="8_bpvgw"]
 [ext_resource type="PackedScene" path="res://World/checkpoint.tscn" id="8_txwbn"]
-[ext_resource type="PackedScene" path="res://World/door.tscn" id="9_cnfnx"]
+[ext_resource type="PackedScene" uid="uid://3kiyvv84s5du" path="res://World/door.tscn" id="9_cnfnx"]
 
 [sub_resource type="Curve2D" id="Curve2D_dfixm"]
 _data = {
@@ -51,8 +51,8 @@ curve = SubResource("Curve2D_dfixm")
 speed = 3.0
 
 [node name="PathFollow2D" parent="MovingSpikeEnemy2" index="0"]
-position = Vector2(75.0295, 101.054)
-progress = 24.5757
+position = Vector2(34.1365, 101.054)
+progress = 125.224
 
 [node name="AnimationPlayer" parent="MovingSpikeEnemy2" index="1"]
 speed_scale = 3.0

@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3]
+[gd_scene load_steps=4 format=3 uid="uid://3kiyvv84s5du"]
 
 [ext_resource type="Texture2D" uid="uid://6aelox1iknne" path="res://Textures/tiles_packed.png" id="1_gq82h"]
 [ext_resource type="Script" path="res://World/door.gd" id="1_y2wdg"]
@@ -21,3 +21,4 @@ position = Vector2(0, -10.5)
 shape = SubResource("RectangleShape2D_q6ty2")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

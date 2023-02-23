@@ -23,6 +23,7 @@ var state: State = State.MOVE
 var double_jump: int
 var buffered_jump: bool = false
 var coyote_jump: bool = false
+var on_door: bool = false
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity: float = ProjectSettings.get_setting("physics/2d/default_gravity")
@@ -59,7 +60,7 @@ func move_state(delta: float, input: Vector2) -> void:
 		animatedSprite.animation = "Idle"
 	if is_on_floor():
 		double_jump = moveData.DOUBLE_JUMP
-	if is_on_floor() or coyote_jump:
+	if (is_on_floor() or coyote_jump) and (not on_door):
 		if Input.is_action_just_pressed("ui_up") or buffered_jump:
 			velocity.y = -moveData.JUMP_VELOCITY
 			buffered_jump = false
@@ -68,7 +69,9 @@ func move_state(delta: float, input: Vector2) -> void:
 		velocity.y += gravity * delta
 		if Input.is_action_just_released("ui_up") and velocity.y < -10.0:
 			velocity.y *= moveData.AIR_BREAK
-		if Input.is_action_just_pressed("ui_up"):
+		if on_door:
+			pass
+		elif Input.is_action_just_pressed("ui_up"):
 			if 0 < double_jump:
 				velocity.y = -moveData.JUMP_VELOCITY
 				double_jump -= 1
