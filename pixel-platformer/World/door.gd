@@ -15,6 +15,8 @@ func _process(_delta: float) -> void:
 		player.on_door = false
 
 func go_to_next_level():
+	if target_level_path.is_empty():
+		return
 	LevelTransitions.play_exit_transition()
 	get_tree().paused = true
 	await LevelTransitions.transition_completed
