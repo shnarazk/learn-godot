@@ -1,0 +1,75 @@
+[gd_scene load_steps=11 format=3 uid="uid://bia5gd2dlr0m"]
+
+[ext_resource type="Texture2D" uid="uid://wliu7iiwf5au" path="res://yuhina002.png" id="1_jdmjm"]
+[ext_resource type="Script" path="res://yuhina.gd" id="2_qj3vk"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ut62y"]
+atlas = ExtResource("1_jdmjm")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yjpj4"]
+atlas = ExtResource("1_jdmjm")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4vlib"]
+atlas = ExtResource("1_jdmjm")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p18bp"]
+atlas = ExtResource("1_jdmjm")
+region = Rect2(0, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j78kj"]
+atlas = ExtResource("1_jdmjm")
+region = Rect2(32, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y5q1r"]
+atlas = ExtResource("1_jdmjm")
+region = Rect2(64, 64, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3mjyh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ut62y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yjpj4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4vlib")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p18bp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j78kj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y5q1r")
+}],
+"loop": true,
+"name": &"migi aruki",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hl8hi"]
+
+[node name="Yuhina" type="CharacterBody2D"]
+safe_margin = 1.0
+script = ExtResource("2_qj3vk")
+
+[node name="Yuhina002" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -16)
+sprite_frames = SubResource("SpriteFrames_3mjyh")
+animation = &"migi aruki"
+autoplay = "default"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -15)
+shape = SubResource("CapsuleShape2D_hl8hi")

@@ -1,0 +1,65 @@
+[gd_scene load_steps=6 format=3 uid="uid://brwjmikwhlery"]
+
+[ext_resource type="Texture2D" uid="uid://jte3veiuyvb" path="res://jithin-vijayamohanan-FxSJgfsTdtk-unsplash.jpg" id="1_a6xei"]
+[ext_resource type="PackedScene" uid="uid://bia5gd2dlr0m" path="res://yuhina.tscn" id="2_pdj1u"]
+[ext_resource type="PackedScene" uid="uid://71i6nh6bnyso" path="res://message_box.tscn" id="3_30fr4"]
+[ext_resource type="PackedScene" uid="uid://5md6fo40rgly" path="res://god.tscn" id="3_yh3cp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gr37s"]
+size = Vector2(466, 196)
+
+[node name="Node" type="Node"]
+
+[node name="Jithin-vijayamohanan-fxSJgfsTdtk-unsplash" type="Sprite2D" parent="."]
+position = Vector2(2, 7.70372e-34)
+scale = Vector2(0.33, 0.33)
+texture = ExtResource("1_a6xei")
+centered = false
+
+[node name="Yuhina002" parent="." node_paths=PackedStringArray("controller") instance=ExtResource("2_pdj1u")]
+position = Vector2(632, 404)
+scale = Vector2(5.90625, 6.375)
+controller = NodePath("../Control/MessageBox")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(532, 588)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(7, -1)
+shape = SubResource("RectangleShape2D_gr37s")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+position = Vector2(1171, 346)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2(12, 2)
+shape = SubResource("RectangleShape2D_gr37s")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 41.0
+offset_top = 938.0
+offset_right = 1962.0
+offset_bottom = 1315.0
+
+[node name="MessageBox" parent="Control" instance=ExtResource("3_30fr4")]
+layout_mode = 0
+anchors_preset = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 49.0
+offset_top = 33.0
+offset_right = 1649.0
+offset_bottom = 293.0
+grow_horizontal = 1
+grow_vertical = 1
+
+[node name="God" parent="." node_paths=PackedStringArray("yuhina") instance=ExtResource("3_yh3cp")]
+position = Vector2(1207, 574)
+scale = Vector2(4, 4)
+yuhina = NodePath("../Yuhina002")
+
+[connection signal="yuhina_in" from="God" to="Control/MessageBox" method="_on_god_yuhina_in"]
