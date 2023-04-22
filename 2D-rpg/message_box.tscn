@@ -7,16 +7,16 @@
 bg_color = Color(0.886275, 0.8, 0.815686, 1)
 
 [node name="MessageBox" type="Panel"]
-custom_minimum_size = Vector2(1600, 260)
+custom_minimum_size = Vector2(300, 40)
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 13.0
-offset_top = 6.0
-offset_right = 1613.0
-offset_bottom = 266.0
+offset_left = -150.0
+offset_top = 78.0
+offset_right = 150.0
+offset_bottom = 118.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_pq528")
@@ -27,14 +27,14 @@ layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_left = 108.0
-offset_top = -84.0
-offset_right = 1527.0
-offset_bottom = 92.0
+offset_left = 4.0
+offset_top = -15.0
+offset_right = 264.0
+offset_bottom = 15.0
 grow_vertical = 2
 theme_override_colors/default_color = Color(0, 0, 0.52549, 1)
-theme_override_font_sizes/normal_font_size = 50
-theme_override_font_sizes/bold_font_size = 50
+theme_override_font_sizes/normal_font_size = 10
+theme_override_font_sizes/bold_font_size = 10
 bbcode_enabled = true
 
 [node name="Timer" type="Timer" parent="."]
@@ -42,8 +42,8 @@ wait_time = 5.0
 one_shot = true
 
 [node name="Owl" type="Sprite2D" parent="."]
-position = Vector2(1646, 188)
-scale = Vector2(0.3, 0.3)
+position = Vector2(286, 16)
+scale = Vector2(0.05, 0.05)
 texture = ExtResource("3_6k23b")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

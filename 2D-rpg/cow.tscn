@@ -1,0 +1,123 @@
+[gd_scene load_steps=13 format=3 uid="uid://bwxq7fjkd3use"]
+
+[ext_resource type="Texture2D" uid="uid://dxe8obk25drge" path="res://Characters/Free Cow Sprites.png" id="1_chd3x"]
+
+[sub_resource type="Curve2D" id="Curve2D_d36th"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 1, 3, 0, 0, 0, 0, 69, 4, 0, 0, 0, 0, 46, 54, 0, 0, 0, 0, -6, 55, 0, 0, 0, 0, 1, 3)
+}
+point_count = 5
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2rxm7"]
+atlas = ExtResource("1_chd3x")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_prurg"]
+atlas = ExtResource("1_chd3x")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3m2rl"]
+atlas = ExtResource("1_chd3x")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q64d3"]
+atlas = ExtResource("1_chd3x")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1ft6r"]
+atlas = ExtResource("1_chd3x")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qqy58"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2rxm7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_prurg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3m2rl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q64d3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1ft6r")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w20hf"]
+size = Vector2(26, 14)
+
+[sub_resource type="Animation" id="Animation_p5k1k"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PathFollow2D:progress_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_utaqj"]
+resource_name = "new_animation"
+length = 30.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PathFollow2D:progress_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 25.9, 30),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 0.99, 0.99]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_y7bo7"]
+_data = {
+"RESET": SubResource("Animation_p5k1k"),
+"new_animation": SubResource("Animation_utaqj")
+}
+
+[node name="Cow" type="Path2D"]
+curve = SubResource("Curve2D_d36th")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="."]
+position = Vector2(1, 3)
+rotation = 0.0756131
+rotates = false
+
+[node name="Cow" type="Node2D" parent="PathFollow2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="PathFollow2D/Cow"]
+position = Vector2(0, -13)
+sprite_frames = SubResource("SpriteFrames_qqy58")
+autoplay = "default"
+frame = 3
+frame_progress = 0.858304
+
+[node name="Area2D" type="StaticBody2D" parent="PathFollow2D/Cow"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PathFollow2D/Cow/Area2D"]
+position = Vector2(1, -7)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_w20hf")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "new_animation"
+libraries = {
+"": SubResource("AnimationLibrary_y7bo7")
+}

@@ -33,29 +33,26 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8u0um"]
-size = Vector2(42, 33)
+size = Vector2(20, 17)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_3pqvr"]
-radius = 51.0
+radius = 26.0192
 
 [node name="God" type="CharacterBody2D"]
 script = ExtResource("1_fabwd")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_3h8hq")
 autoplay = "default"
 frame_progress = 0.100186
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-1, 2.5)
+position = Vector2(0, 1.5)
 shape = SubResource("RectangleShape2D_8u0um")
 
 [node name="Area2D" type="Area2D" parent="."]
-visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-visible = false
 shape = SubResource("CircleShape2D_3pqvr")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
