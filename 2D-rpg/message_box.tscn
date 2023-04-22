@@ -38,7 +38,7 @@ theme_override_font_sizes/bold_font_size = 10
 bbcode_enabled = true
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 5.0
+wait_time = 4.0
 one_shot = true
 
 [node name="Owl" type="Sprite2D" parent="."]

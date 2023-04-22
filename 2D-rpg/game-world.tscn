@@ -1,17 +1,23 @@
-[gd_scene load_steps=9 format=3 uid="uid://brwjmikwhlery"]
+[gd_scene load_steps=12 format=3 uid="uid://brwjmikwhlery"]
 
 [ext_resource type="Texture2D" uid="uid://jte3veiuyvb" path="res://jithin-vijayamohanan-FxSJgfsTdtk-unsplash.jpg" id="1_a6xei"]
 [ext_resource type="PackedScene" uid="uid://dsk2xy17qotke" path="res://background.tscn" id="2_opme8"]
 [ext_resource type="PackedScene" uid="uid://bia5gd2dlr0m" path="res://yuhina.tscn" id="2_pdj1u"]
 [ext_resource type="PackedScene" uid="uid://71i6nh6bnyso" path="res://message_box.tscn" id="3_30fr4"]
 [ext_resource type="PackedScene" uid="uid://5md6fo40rgly" path="res://god.tscn" id="3_yh3cp"]
+[ext_resource type="Script" path="res://CanvasLayer.gd" id="6_4nn7a"]
 [ext_resource type="PackedScene" uid="uid://bwxq7fjkd3use" path="res://cow.tscn" id="6_euhgx"]
+[ext_resource type="PackedScene" uid="uid://fuinvmghmonw" path="res://3D.tscn" id="7_5xjky"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gr37s"]
 size = Vector2(72, 94)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7ik3v"]
 size = Vector2(46.9997, 75.0002)
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_gfxff"]
+resource_name = "item"
+viewport_path = NodePath("SubViewport")
 
 [node name="Node" type="Node"]
 
@@ -26,7 +32,7 @@ centered = false
 
 [node name="Yuhina002" parent="." node_paths=PackedStringArray("controller") instance=ExtResource("2_pdj1u")]
 position = Vector2(147, 164)
-scale = Vector2(1, 1.079)
+scale = Vector2(0.8, 0.8)
 controller = NodePath("../Control/MessageBox")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
@@ -49,7 +55,23 @@ position = Vector2(289, 77)
 yuhina = NodePath("../Yuhina002")
 
 [node name="Cow" parent="." instance=ExtResource("6_euhgx")]
-position = Vector2(52, 98)
+position = Vector2(22, 59)
+
+[node name="ItemViewer" type="CanvasLayer" parent="."]
+layer = 2
+visible = false
+script = ExtResource("6_4nn7a")
+
+[node name="Viewport" type="SubViewport" parent="ItemViewer"]
+transparent_bg = true
+size_2d_override = Vector2i(200, 200)
+
+[node name="Node3D" parent="ItemViewer/Viewport" instance=ExtResource("7_5xjky")]
+
+[node name="Model" type="Sprite2D" parent="ItemViewer"]
+position = Vector2(154, 117)
+scale = Vector2(0.2, 0.2)
+texture = SubResource("ViewportTexture_gfxff")
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
@@ -74,3 +96,4 @@ grow_horizontal = 1
 grow_vertical = 1
 
 [connection signal="yuhina_in" from="God" to="Control/MessageBox" method="_on_god_yuhina_in"]
+[connection signal="showItem" from="Control/MessageBox" to="ItemViewer" method="_on_message_box_show_item"]
