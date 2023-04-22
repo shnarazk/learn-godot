@@ -16,14 +16,21 @@ func _physics_process(_delta):
 	velocity = Vector2.ZERO # The player's movement vector.
 	if Input.is_action_pressed("ui_right"):
 		velocity.x += 1
+		$Sprite.animation = "migi aruki"
 	if Input.is_action_pressed("ui_left"):
 		velocity.x -= 1
+		$Sprite.animation = "hidari aruki"
 	if Input.is_action_pressed("ui_down"):
 		velocity.y += 1
+		$Sprite.animation = "default"
 	if Input.is_action_pressed("ui_up"):
 		velocity.y -= 1
+		$Sprite.animation = "ue aruki"
 	if velocity.length() > 0:
 		velocity = velocity.normalized() * 60
+		#$Sprite.play()
+	else:
+		pass # $Sprite.stop()
 #		if panel != null:
 #			panel.visible = true
 #			message_box.text = "もっと意味あること呟けよ"

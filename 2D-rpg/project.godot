@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="new"
+config/name="BigCountry"
 run/main_scene="res://game-world.tscn"
 config/features=PackedStringArray("4.0", "Forward Plus")
 config/icon="res://icon.svg"

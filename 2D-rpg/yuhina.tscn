@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://bia5gd2dlr0m"]
+[gd_scene load_steps=17 format=3 uid="uid://bia5gd2dlr0m"]
 
 [ext_resource type="Texture2D" uid="uid://wliu7iiwf5au" path="res://yuhina002.png" id="1_jdmjm"]
 [ext_resource type="Script" path="res://yuhina.gd" id="2_qj3vk"]
@@ -15,6 +15,18 @@ region = Rect2(32, 0, 32, 32)
 atlas = ExtResource("1_jdmjm")
 region = Rect2(64, 0, 32, 32)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_bqkgy"]
+atlas = ExtResource("1_jdmjm")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wjjg5"]
+atlas = ExtResource("1_jdmjm")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_scuj4"]
+atlas = ExtResource("1_jdmjm")
+region = Rect2(64, 32, 32, 32)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_p18bp"]
 atlas = ExtResource("1_jdmjm")
 region = Rect2(0, 64, 32, 32)
@@ -26,6 +38,18 @@ region = Rect2(32, 64, 32, 32)
 [sub_resource type="AtlasTexture" id="AtlasTexture_y5q1r"]
 atlas = ExtResource("1_jdmjm")
 region = Rect2(64, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cku8c"]
+atlas = ExtResource("1_jdmjm")
+region = Rect2(0, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_55lsy"]
+atlas = ExtResource("1_jdmjm")
+region = Rect2(32, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_760oi"]
+atlas = ExtResource("1_jdmjm")
+region = Rect2(64, 96, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_3mjyh"]
 animations = [{
@@ -45,6 +69,20 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_bqkgy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wjjg5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_scuj4")
+}],
+"loop": true,
+"name": &"hidari aruki",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_p18bp")
 }, {
 "duration": 1.0,
@@ -56,6 +94,20 @@ animations = [{
 "loop": true,
 "name": &"migi aruki",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cku8c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_55lsy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_760oi")
+}],
+"loop": true,
+"name": &"ue aruki",
+"speed": 5.0
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hl8hi"]
@@ -64,10 +116,10 @@ animations = [{
 safe_margin = 1.0
 script = ExtResource("2_qj3vk")
 
-[node name="Yuhina002" type="AnimatedSprite2D" parent="."]
+[node name="Sprite" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -16)
 sprite_frames = SubResource("SpriteFrames_3mjyh")
-animation = &"migi aruki"
+animation = &"ue aruki"
 autoplay = "default"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
