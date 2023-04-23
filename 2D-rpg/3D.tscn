@@ -1,8 +1,20 @@
-[gd_scene load_steps=8 format=3 uid="uid://fuinvmghmonw"]
+[gd_scene load_steps=11 format=3 uid="uid://fuinvmghmonw"]
 
 [ext_resource type="Script" path="res://3D.gd" id="1_wjwca"]
 
+[sub_resource type="Gradient" id="Gradient_xyktu"]
+colors = PackedColorArray(0.706896, 0.525256, 0.319202, 1, 0.930469, 0.921862, 0.837586, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_1fs3b"]
+gradient = SubResource("Gradient_xyktu")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1uq07"]
+albedo_texture = SubResource("GradientTexture1D_1fs3b")
+metallic = 0.64
+metallic_specular = 0.68
+
 [sub_resource type="PrismMesh" id="PrismMesh_m8vnr"]
+material = SubResource("StandardMaterial3D_1uq07")
 
 [sub_resource type="Environment" id="Environment_lxqwo"]
 background_color = Color(0, 0, 0, 0)
@@ -10,6 +22,21 @@ ambient_light_source = 2
 ambient_light_color = Color(0.662745, 0.662745, 0.662745, 0)
 
 [sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_2cise"]
+
+[sub_resource type="Animation" id="Animation_usorj"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Mesh:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
 
 [sub_resource type="Animation" id="Animation_wkxqm"]
 resource_name = "new_animation"
@@ -26,21 +53,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector3(0, 0, 0), Vector3(0, 6.28319, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_usorj"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Mesh:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(0, 0, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_onnnp"]
@@ -69,3 +81,5 @@ libraries = {
 
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.07106, 1.11307, 1.38079)
+light_energy = 3.0
+light_size = 1.0

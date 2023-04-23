@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://b08tfy8rtqyio"]
+
+[ext_resource type="Texture2D" uid="uid://bg10rpnls7vmv" path="res://Objects/Basic Furniture.png" id="1_noxfb"]
+
+[node name="Drawer" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_noxfb")
+region_enabled = true
+region_rect = Rect2(48, 32, 16, 16)

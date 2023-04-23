@@ -3,8 +3,9 @@
 [ext_resource type="Texture2D" uid="uid://dxe8obk25drge" path="res://Characters/Free Cow Sprites.png" id="1_chd3x"]
 
 [sub_resource type="Curve2D" id="Curve2D_d36th"]
+resource_local_to_scene = true
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 1, 3, 0, 0, 0, 0, 69, 4, 0, 0, 0, 0, 46, 54, 0, 0, 0, 0, -6, 55, 0, 0, 0, 0, 2, 22, 0, 0, 0, 0, 1, 3)
+"points": PackedVector2Array(0, 0, 0, 0, 1, 3, 0, 0, 0, 0, 69, 4, 0, 0, 0, 0, 48, 53, 0, 0, 0, 0, -6, 55, 0, 0, 0, 0, 2, 22, 0, 0, 0, 0, 1, 3)
 }
 point_count = 6
 
