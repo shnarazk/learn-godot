@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://wliu7iiwf5au"
-path="res://.godot/imported/yuhina002.png-e065833011585718b549615417caafd5.ctex"
+uid="uid://dcte8xnknh8nl"
+path="res://.godot/imported/owl.png-2a934156069ad3045ff663fbe485a62c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://yuhina002.png"
-dest_files=["res://.godot/imported/yuhina002.png-e065833011585718b549615417caafd5.ctex"]
+source_file="res://Characters/owl.png"
+dest_files=["res://.godot/imported/owl.png-2a934156069ad3045ff663fbe485a62c.ctex"]
 
 [params]
 

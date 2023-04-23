@@ -10,7 +10,8 @@ config_version=5
 
 [application]
 
-config/name="BigCountry"
+config/name="Little Garden"
+config/description="会話、アイテム、RPG"
 run/main_scene="res://game-world.tscn"
 config/features=PackedStringArray("4.0", "Forward Plus")
 config/icon="res://icon.svg"

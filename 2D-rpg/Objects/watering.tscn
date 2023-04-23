@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://bxvwpb7ponaov"]
+
+[ext_resource type="Texture2D" uid="uid://dnrglt67n34xc" path="res://Objects/Basic tools and meterials.png" id="1_q5pmb"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_uyw6j"]
+
+[node name="Watering" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_q5pmb")
+region_enabled = true
+region_rect = Rect2(0, 4, 16, 10)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_uyw6j")

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bkynfav8hidr5"
-path="res://.godot/imported/tiles_packed.png-fd6b33d2b56a22feb83002d47ed8ee64.ctex"
+uid="uid://wliu7iiwf5au"
+path="res://.godot/imported/yuhina002.png-ff99db8361b7093576f4ed052f3dda5d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://tiles_packed.png"
-dest_files=["res://.godot/imported/tiles_packed.png-fd6b33d2b56a22feb83002d47ed8ee64.ctex"]
+source_file="res://Characters/yuhina002.png"
+dest_files=["res://.godot/imported/yuhina002.png-ff99db8361b7093576f4ed052f3dda5d.ctex"]
 
 [params]
 

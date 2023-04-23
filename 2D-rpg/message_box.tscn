@@ -1,7 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://71i6nh6bnyso"]
+[gd_scene load_steps=4 format=3 uid="uid://cijh13c6a8b5b"]
 
 [ext_resource type="Script" path="res://message_box.gd" id="1_1e5ro"]
-[ext_resource type="Texture2D" uid="uid://dcte8xnknh8nl" path="res://owl.png" id="3_6k23b"]
+[ext_resource type="Texture2D" uid="uid://dcte8xnknh8nl" path="res://Characters/owl.png" id="2_20wpy"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pq528"]
 bg_color = Color(0.886275, 0.8, 0.815686, 1)
@@ -44,6 +44,6 @@ one_shot = true
 [node name="Owl" type="Sprite2D" parent="."]
 position = Vector2(286, 16)
 scale = Vector2(0.05, 0.05)
-texture = ExtResource("3_6k23b")
+texture = ExtResource("2_20wpy")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

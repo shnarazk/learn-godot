@@ -1,18 +1,18 @@
-[gd_scene load_steps=9 format=3 uid="uid://5md6fo40rgly"]
+[gd_scene load_steps=9 format=3 uid="uid://has00pair678"]
 
-[ext_resource type="Script" path="res://god.gd" id="1_fabwd"]
-[ext_resource type="Texture2D" uid="uid://bafhju4ll2e45" path="res://characters_packed.png" id="1_nih2g"]
+[ext_resource type="Script" path="res://Characters/god.gd" id="1_ev32r"]
+[ext_resource type="Texture2D" uid="uid://bafhju4ll2e45" path="res://Characters/characters_packed.png" id="2_mbx4p"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_if0wx"]
-atlas = ExtResource("1_nih2g")
+atlas = ExtResource("2_mbx4p")
 region = Rect2(72, 48, 24, 24)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qnbm3"]
-atlas = ExtResource("1_nih2g")
+atlas = ExtResource("2_mbx4p")
 region = Rect2(96, 48, 24, 24)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wc6pa"]
-atlas = ExtResource("1_nih2g")
+atlas = ExtResource("2_mbx4p")
 region = Rect2(120, 48, 24, 24)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_3h8hq"]
@@ -39,7 +39,7 @@ size = Vector2(20, 17)
 radius = 26.0192
 
 [node name="God" type="CharacterBody2D"]
-script = ExtResource("1_fabwd")
+script = ExtResource("1_ev32r")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_3h8hq")
