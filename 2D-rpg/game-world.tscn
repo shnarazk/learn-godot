@@ -1,79 +1,21 @@
-[gd_scene load_steps=15 format=3 uid="uid://bamb1s48t4ow"]
+[gd_scene load_steps=7 format=3 uid="uid://bamb1s48t4ow"]
 
-[ext_resource type="PackedScene" uid="uid://b08tfy8rtqyio" path="res://Objects/drawer.tscn" id="2_c0qow"]
-[ext_resource type="PackedScene" uid="uid://dsk2xy17qotke" path="res://background.tscn" id="2_opme8"]
-[ext_resource type="PackedScene" uid="uid://tgw2vakj06s6" path="res://Characters/yuhina.tscn" id="2_pdj1u"]
-[ext_resource type="PackedScene" uid="uid://cfnv2082wkn3c" path="res://Objects/Bed.tscn" id="2_uglt2"]
+[ext_resource type="PackedScene" uid="uid://dfmk56ey3jg07" path="res://Stage1.tscn" id="1_mwpek"]
+[ext_resource type="PackedScene" uid="uid://b8b5gshbnvjvh" path="res://Stage2.tscn" id="2_cvhh4"]
 [ext_resource type="PackedScene" uid="uid://cijh13c6a8b5b" path="res://message_box.tscn" id="3_30fr4"]
-[ext_resource type="PackedScene" uid="uid://has00pair678" path="res://Characters/god.tscn" id="3_yh3cp"]
-[ext_resource type="PackedScene" uid="uid://bxvwpb7ponaov" path="res://Objects/watering.tscn" id="4_ahgts"]
 [ext_resource type="Script" path="res://CanvasLayer.gd" id="6_4nn7a"]
-[ext_resource type="PackedScene" uid="uid://bwxq7fjkd3use" path="res://Characters/cow.tscn" id="6_euhgx"]
 [ext_resource type="PackedScene" uid="uid://fuinvmghmonw" path="res://3D.tscn" id="7_5xjky"]
-[ext_resource type="PackedScene" uid="uid://ek6ltu8pjjb" path="res://Characters/kitty.tscn" id="8_dfnqx"]
-
-[sub_resource type="Curve2D" id="Curve2D_1aqjx"]
-resource_local_to_scene = true
-_data = {
-"points": PackedVector2Array(0, 0, 0, 0, 1, 3, 0, 0, 0, 0, 69, 4, 0, 0, 0, 0, 48, 53, 0, 0, 0, 0, -6, 55, 0, 0, 0, 0, 2, 22, 0, 0, 0, 0, 1, 3)
-}
-point_count = 6
-
-[sub_resource type="Curve2D" id="Curve2D_retg3"]
-resource_local_to_scene = true
-_data = {
-"points": PackedVector2Array(0, 0, 0, 0, 1, 3, 0, 0, 0, 0, 96, -26, 0, 0, 0, 0, 96, 14, 0, 0, 0, 0, 144, 30, 0, 0, 0, 0, -8, 22, 0, 0, 0, 0, 1, 3)
-}
-point_count = 6
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_gfxff"]
 resource_name = "item"
 viewport_path = NodePath("SubViewport")
 
-[node name="Node" type="Node2D"]
+[node name="GameScreen" type="Node2D"]
 y_sort_enabled = true
 
-[node name="Background" parent="." instance=ExtResource("2_opme8")]
+[node name="Stage1" parent="." instance=ExtResource("1_mwpek")]
 
-[node name="Drawer" parent="." instance=ExtResource("2_c0qow")]
-position = Vector2(136, 64)
-
-[node name="Drawer2" parent="." instance=ExtResource("2_c0qow")]
-position = Vector2(152, 64)
-
-[node name="Bed" parent="." instance=ExtResource("2_uglt2")]
-position = Vector2(195, 82)
-
-[node name="Yuhina002" parent="." node_paths=PackedStringArray("controller") instance=ExtResource("2_pdj1u")]
-y_sort_enabled = true
-position = Vector2(134, 176)
-scale = Vector2(0.5, 0.5)
-controller = NodePath("../Control/MessageBox")
-
-[node name="Watering" parent="." instance=ExtResource("4_ahgts")]
-position = Vector2(84, 180)
-
-[node name="God" parent="." node_paths=PackedStringArray("yuhina") instance=ExtResource("3_yh3cp")]
-y_sort_enabled = true
-position = Vector2(289, 77)
-scale = Vector2(0.5, 0.5)
-yuhina = NodePath("../Yuhina002")
-
-[node name="Kitty" parent="." instance=ExtResource("8_dfnqx")]
-y_sort_enabled = true
-position = Vector2(76, 32)
-
-[node name="Cow" parent="." instance=ExtResource("6_euhgx")]
-y_sort_enabled = true
-position = Vector2(32, 48)
-curve = SubResource("Curve2D_1aqjx")
-
-[node name="Cow2" parent="." instance=ExtResource("6_euhgx")]
-position = Vector2(88, 202)
-curve = SubResource("Curve2D_retg3")
-
-[node name="AnimationPlayer" parent="Cow2" index="1"]
-speed_scale = 0.6
+[node name="Stage2" parent="." instance=ExtResource("2_cvhh4")]
 
 [node name="ItemViewer" type="CanvasLayer" parent="."]
 layer = 2
@@ -114,7 +56,4 @@ offset_bottom = 40.0
 grow_horizontal = 1
 grow_vertical = 1
 
-[connection signal="yuhina_in" from="God" to="Control/MessageBox" method="_on_god_yuhina_in"]
 [connection signal="showItem" from="Control/MessageBox" to="ItemViewer" method="_on_message_box_show_item"]
-
-[editable path="Cow2"]

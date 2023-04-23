@@ -1,0 +1,74 @@
+[gd_scene load_steps=11 format=3 uid="uid://dfmk56ey3jg07"]
+
+[ext_resource type="PackedScene" uid="uid://dsk2xy17qotke" path="res://background1.tscn" id="1_rlx6t"]
+[ext_resource type="PackedScene" uid="uid://b08tfy8rtqyio" path="res://Objects/drawer.tscn" id="2_3qqem"]
+[ext_resource type="PackedScene" uid="uid://cfnv2082wkn3c" path="res://Objects/Bed.tscn" id="3_ik3rw"]
+[ext_resource type="PackedScene" uid="uid://tgw2vakj06s6" path="res://Characters/yuhina.tscn" id="4_wpqtb"]
+[ext_resource type="PackedScene" uid="uid://bxvwpb7ponaov" path="res://Objects/watering.tscn" id="5_a3xxe"]
+[ext_resource type="PackedScene" uid="uid://has00pair678" path="res://Characters/god.tscn" id="6_0g5ep"]
+[ext_resource type="PackedScene" uid="uid://ek6ltu8pjjb" path="res://Characters/kitty.tscn" id="7_85m6s"]
+[ext_resource type="PackedScene" uid="uid://bwxq7fjkd3use" path="res://Characters/cow.tscn" id="8_hl4qk"]
+
+[sub_resource type="Curve2D" id="Curve2D_hkih6"]
+resource_local_to_scene = true
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 1, 3, 0, 0, 0, 0, 69, 4, 0, 0, 0, 0, 48, 53, 0, 0, 0, 0, -6, 55, 0, 0, 0, 0, 2, 22, 0, 0, 0, 0, 1, 3)
+}
+point_count = 6
+
+[sub_resource type="Curve2D" id="Curve2D_0bj6d"]
+resource_local_to_scene = true
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 1, 3, 0, 0, 0, 0, 96, -26, 0, 0, 0, 0, 96, 14, 0, 0, 0, 0, 144, 30, 0, 0, 0, 0, -8, 22, 0, 0, 0, 0, 1, 3)
+}
+point_count = 6
+
+[node name="Stage1" type="Node2D"]
+
+[node name="Background1" parent="." instance=ExtResource("1_rlx6t")]
+
+[node name="Drawer" parent="." instance=ExtResource("2_3qqem")]
+position = Vector2(136, 64)
+
+[node name="Drawer2" parent="." instance=ExtResource("2_3qqem")]
+position = Vector2(152, 64)
+
+[node name="Bed" parent="." instance=ExtResource("3_ik3rw")]
+position = Vector2(195, 82)
+
+[node name="Yuhina002" parent="." node_paths=PackedStringArray("controller") instance=ExtResource("4_wpqtb")]
+y_sort_enabled = true
+position = Vector2(134, 176)
+scale = Vector2(0.5, 0.5)
+controller = NodePath("../../Control/MessageBox")
+
+[node name="Watering" parent="." instance=ExtResource("5_a3xxe")]
+position = Vector2(84, 180)
+
+[node name="God" parent="." node_paths=PackedStringArray("yuhina") instance=ExtResource("6_0g5ep")]
+y_sort_enabled = true
+position = Vector2(289, 77)
+scale = Vector2(0.5, 0.5)
+yuhina = NodePath("../Yuhina002")
+
+[node name="Kitty" parent="." instance=ExtResource("7_85m6s")]
+y_sort_enabled = true
+position = Vector2(76, 32)
+
+[node name="Cow" parent="." instance=ExtResource("8_hl4qk")]
+y_sort_enabled = true
+position = Vector2(32, 48)
+curve = SubResource("Curve2D_hkih6")
+
+[node name="Cow2" parent="." instance=ExtResource("8_hl4qk")]
+position = Vector2(88, 202)
+curve = SubResource("Curve2D_0bj6d")
+
+[node name="16851" type="Timer" parent="Cow2/PathFollow2D" index="1"]
+wait_time = 0.2
+one_shot = true
+
+[node name="AnimationPlayer" parent="Cow2" index="1"]
+speed_scale = 0.6
+
+[editable path="Cow2"]
