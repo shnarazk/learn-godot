@@ -20,13 +20,14 @@ var yuhina_and_god = [
 	"[b][color=blue]神様[/color][/b] お前にやってもらいたいことがある[color=red]以下省略[/color]",
 ]
 
+# 2回目以降のセリフ
 var yuhina_and_god2 = [
 	"[b][color=blue]神様[/color][/b] もうお前に喋ることはないな",
 	"[b][color=blue]神様[/color][/b] イベントをクリアしてからまた来るがよい。"
 ]
 
 var warp = [
-	"🐱 ワープなのニャー",
+	"🐱 ワープなのニャー（運賃は自動引き落としなので残高に気をつけてください）！",
 	"[b][color=red]yuhina[/color][/b] ね、ねこの分際で！"
 ]
 

@@ -14,6 +14,10 @@ func _ready():
 	switch_stage(scene1)
 	print(1)
 
+func _physics_process(_delta):
+	if Input.is_action_pressed("ui_accept"):
+		$ItemViewer.view = false
+
 func switch_stage(scene: PackedScene):
 	if current_stage != null:
 		remove_child(current_stage)
@@ -22,7 +26,6 @@ func switch_stage(scene: PackedScene):
 	add_child(current_stage)
 	$Yuhina.position = current_stage.yuhina_start_at
 	current_stage.yuhina = $Yuhina
-
 	current_stage.connect("start_conversation", $Control.start_conversation)
 	current_stage.connect("change_stage", self.change_stage)
 
