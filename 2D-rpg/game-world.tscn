@@ -27,13 +27,12 @@ script = ExtResource("6_4nn7a")
 
 [node name="Viewport" type="SubViewport" parent="ItemViewer"]
 transparent_bg = true
-size_2d_override = Vector2i(200, 200)
 
 [node name="Node3D" parent="ItemViewer/Viewport" instance=ExtResource("7_5xjky")]
 
 [node name="Model" type="Sprite2D" parent="ItemViewer"]
 position = Vector2(154, 117)
-scale = Vector2(0.2, 0.2)
+scale = Vector2(0.4, 0.4)
 texture = SubResource("ViewportTexture_gfxff")
 
 [node name="Control" type="Control" parent="."]

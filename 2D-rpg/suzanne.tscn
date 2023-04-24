@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://eis2f0mly4fk"]
+
+[node name="suzanne"]
+
+[node name="eyeball_L" parent="Armature/Skeleton3D" index="0"]
+transform = Transform3D(0.999864, -0.0164614, 0.00140042, -2.32831e-09, -0.0847671, -0.996401, 0.0165209, 0.996265, -0.0847551, 0.329099, 1.21606, 0.548572)
+bone_idx = 2
+
+[node name="eyeball_R" parent="Armature/Skeleton3D" index="1"]
+transform = Transform3D(0.999864, 0.0164614, -0.00140042, 3.72529e-09, -0.0847671, -0.996401, -0.0165209, 0.996265, -0.0847551, -0.329099, 1.21606, 0.548572)
+bone_idx = 3

@@ -9,14 +9,14 @@
 [ext_resource type="PackedScene" uid="uid://ek6ltu8pjjb" path="res://Characters/kitty.tscn" id="7_85m6s"]
 [ext_resource type="PackedScene" uid="uid://bwxq7fjkd3use" path="res://Characters/cow.tscn" id="8_hl4qk"]
 
-[sub_resource type="Curve2D" id="Curve2D_42ufd"]
+[sub_resource type="Curve2D" id="Curve2D_ymv7o"]
 resource_local_to_scene = true
 _data = {
 "points": PackedVector2Array(0, 0, 0, 0, 1, 3, 0, 0, 0, 0, 69, 4, 0, 0, 0, 0, 48, 53, 0, 0, 0, 0, -6, 55, 0, 0, 0, 0, 2, 22, 0, 0, 0, 0, 1, 3)
 }
 point_count = 6
 
-[sub_resource type="Curve2D" id="Curve2D_n3shm"]
+[sub_resource type="Curve2D" id="Curve2D_pksuy"]
 resource_local_to_scene = true
 _data = {
 "points": PackedVector2Array(0, 0, 0, 0, 1, 3, 0, 0, 0, 0, 96, -26, 0, 0, 0, 0, 96, 14, 0, 0, 0, 0, 144, 30, 0, 0, 0, 0, -8, 22, 0, 0, 0, 0, 1, 3)
@@ -54,11 +54,11 @@ position = Vector2(76, 32)
 [node name="Cow" parent="." instance=ExtResource("8_hl4qk")]
 y_sort_enabled = true
 position = Vector2(32, 48)
-curve = SubResource("Curve2D_42ufd")
+curve = SubResource("Curve2D_ymv7o")
 
 [node name="Cow2" parent="." instance=ExtResource("8_hl4qk")]
 position = Vector2(88, 202)
-curve = SubResource("Curve2D_n3shm")
+curve = SubResource("Curve2D_pksuy")
 
 [node name="16851" type="Timer" parent="Cow2/PathFollow2D" index="1"]
 wait_time = 0.2

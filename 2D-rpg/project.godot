@@ -22,3 +22,7 @@ window/size/viewport_width=1240
 window/size/viewport_height=960
 window/stretch/mode="canvas_items"
 window/stretch/scale=4.0
+
+[rendering]
+
+anti_aliasing/quality/screen_space_aa=1
