@@ -1,5 +1,6 @@
-[gd_scene load_steps=20 format=3 uid="uid://ek6ltu8pjjb"]
+[gd_scene load_steps=22 format=3 uid="uid://ek6ltu8pjjb"]
 
+[ext_resource type="Script" path="res://Characters/kitty.gd" id="1_dxkdw"]
 [ext_resource type="Texture2D" uid="uid://c4thpg1v8qh30" path="res://Characters/Basic Charakter Spritesheet.png" id="1_jdbob"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3dee6"]
@@ -140,7 +141,11 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t4kms"]
 size = Vector2(10, 10)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_e7ht6"]
+radius = 17.0
+
 [node name="Kitty" type="CharacterBody2D"]
+script = ExtResource("1_dxkdw")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -7)
@@ -151,3 +156,11 @@ autoplay = "walk down"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -6)
 shape = SubResource("RectangleShape2D_t4kms")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -4)
+shape = SubResource("CircleShape2D_e7ht6")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
