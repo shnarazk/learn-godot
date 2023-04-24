@@ -5,6 +5,7 @@ var view: bool = false:
 	set(value):
 		visible = value
 		$Viewport/Node3D.spin = value
+		$AudioStreamPlayer.play()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):

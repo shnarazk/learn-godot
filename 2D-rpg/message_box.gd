@@ -15,6 +15,8 @@ func start_conversation(lines, show_item):
 	visible = true
 	for l in lines:
 		message.text = l
+		$AnimationPlayer.current_animation = "talk"
+		$AnimationPlayer.play()
 		$Timer.start()
 		await $Timer.timeout
 	visible = false

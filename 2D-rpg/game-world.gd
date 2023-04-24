@@ -27,6 +27,8 @@ func switch_stage(scene: PackedScene):
 	current_stage.connect("change_stage", self.change_stage)
 
 func change_stage(next: int):
+	$AnimationPlayer.current_animation = "Warp"
+	$AnimationPlayer.play()
 	$Timer.start()
 	await $Timer.timeout
 	if next == 1:

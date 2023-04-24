@@ -1,10 +1,49 @@
-[gd_scene load_steps=4 format=3 uid="uid://cijh13c6a8b5b"]
+[gd_scene load_steps=8 format=3 uid="uid://cijh13c6a8b5b"]
 
 [ext_resource type="Script" path="res://message_box.gd" id="1_1e5ro"]
 [ext_resource type="Texture2D" uid="uid://dcte8xnknh8nl" path="res://Characters/owl.png" id="2_20wpy"]
+[ext_resource type="AudioStream" uid="uid://dctycxt8rjmre" path="res://Sounds/Talk.wav" id="3_3oid5"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pq528"]
 bg_color = Color(0.886275, 0.8, 0.815686, 1)
+
+[sub_resource type="Animation" id="Animation_o532p"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:playing")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_6c4vt"]
+resource_name = "talk"
+length = 3.0
+step = 1.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:playing")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_yj8w5"]
+_data = {
+"RESET": SubResource("Animation_o532p"),
+"talk": SubResource("Animation_6c4vt")
+}
 
 [node name="MessageBox" type="Panel"]
 custom_minimum_size = Vector2(300, 40)
@@ -45,5 +84,14 @@ one_shot = true
 position = Vector2(286, 16)
 scale = Vector2(0.05, 0.05)
 texture = ExtResource("2_20wpy")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_3oid5")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../AudioStreamPlayer")
+libraries = {
+"": SubResource("AnimationLibrary_yj8w5")
+}
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
