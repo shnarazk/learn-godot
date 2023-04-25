@@ -20,7 +20,7 @@ var yuhina_and_god = [
 
 # 2回目以降のセリフ
 var yuhina_and_god2 = [
-	"[b][color=blue]神様[/color][/b] 伝説のアイテム「踊る小学4年生」を大事にしておるかの",
+	"[b][color=blue]神様[/color][/b] 伝説のアイテム「踊る小学4年生人形🧸」を大事にしておるかの",
 	"[b][color=blue]神様[/color][/b] イベントをクリアしてからまた来るがよい。"
 ]
 

@@ -3,9 +3,9 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://606iablrascv"
-path.etc2="res://.godot/imported/boy_Boy01_normal.png-6b6fc167fca890c0c9b4f854ea968493.etc2.ctex"
+path.s3tc="res://.godot/imported/boy_Boy01_normal.png-6b6fc167fca890c0c9b4f854ea968493.s3tc.ctex"
 metadata={
-"imported_formats": ["etc2_astc"],
+"imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={}
@@ -13,7 +13,7 @@ generator_parameters={}
 [deps]
 
 source_file="res://Objects/boy_Boy01_normal.png"
-dest_files=["res://.godot/imported/boy_Boy01_normal.png-6b6fc167fca890c0c9b4f854ea968493.etc2.ctex"]
+dest_files=["res://.godot/imported/boy_Boy01_normal.png-6b6fc167fca890c0c9b4f854ea968493.s3tc.ctex"]
 
 [params]
 

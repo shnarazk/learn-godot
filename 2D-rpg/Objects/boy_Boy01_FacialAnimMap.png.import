@@ -3,9 +3,9 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://h781264k6fg6"
-path.etc2="res://.godot/imported/boy_Boy01_FacialAnimMap.png-c52e2413feeb9943b9bd275011607f99.etc2.ctex"
+path.s3tc="res://.godot/imported/boy_Boy01_FacialAnimMap.png-c52e2413feeb9943b9bd275011607f99.s3tc.ctex"
 metadata={
-"imported_formats": ["etc2_astc"],
+"imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={}
@@ -13,7 +13,7 @@ generator_parameters={}
 [deps]
 
 source_file="res://Objects/boy_Boy01_FacialAnimMap.png"
-dest_files=["res://.godot/imported/boy_Boy01_FacialAnimMap.png-c52e2413feeb9943b9bd275011607f99.etc2.ctex"]
+dest_files=["res://.godot/imported/boy_Boy01_FacialAnimMap.png-c52e2413feeb9943b9bd275011607f99.s3tc.ctex"]
 
 [params]
 

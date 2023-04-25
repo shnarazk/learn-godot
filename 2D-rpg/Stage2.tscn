@@ -19,7 +19,7 @@ yuhina = NodePath("")
 
 [node name="Kitty" parent="." instance=ExtResource("7_ylvgq")]
 y_sort_enabled = true
-position = Vector2(240, 200)
+position = Vector2(248, 232)
 
 [connection signal="yuhina_in" from="God" to="." method="_on_god_yuhina_in"]
 [connection signal="kitty_meets_yuhina" from="Kitty" to="." method="_on_kitty_kitty_meets_yuhina"]
