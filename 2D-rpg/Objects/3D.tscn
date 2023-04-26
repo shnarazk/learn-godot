@@ -1,7 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://fuinvmghmonw"]
+[gd_scene load_steps=11 format=3 uid="uid://cgwsdovl4edfj"]
 
-[ext_resource type="Script" path="res://3D.gd" id="1_wjwca"]
-[ext_resource type="PackedScene" uid="uid://blxq470v63ois" path="res://Objects/boy.glb" id="3_lsc7t"]
+[ext_resource type="Script" path="res://Objects/3D.gd" id="1_5q4j3"]
+[ext_resource type="PackedScene" uid="uid://blxq470v63ois" path="res://Objects/boy/boy.glb" id="2_s40bg"]
+[ext_resource type="PackedScene" uid="uid://dyy25i6psr6e6" path="res://Objects/suzanne/suzanne.glb" id="3_5d300"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_g4n8m"]
 albedo_color = Color(0.392157, 0.603922, 0.729412, 1)
@@ -57,7 +58,7 @@ _data = {
 }
 
 [node name="Node3D" type="Node3D"]
-script = ExtResource("1_wjwca")
+script = ExtResource("1_5q4j3")
 
 [node name="Stage" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 4.46638e-06, 0, 1, 0, -4.46638e-06, 0, 1, 0, 0, 0)
@@ -67,7 +68,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.456657, 0)
 mesh = SubResource("CylinderMesh_ckyfp")
 skeleton = NodePath("../..")
 
-[node name="boy" parent="Stage" instance=ExtResource("3_lsc7t")]
+[node name="boy" parent="Stage" instance=ExtResource("2_s40bg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.4, 0)
 
 [node name="Skeleton3D" parent="Stage/boy/Armature" index="0"]
@@ -180,6 +181,9 @@ bones/80/rotation = Quaternion(0.440746, -0.0221996, 0.00812586, 0.89732)
 
 [node name="AnimationPlayer" parent="Stage/boy" index="1"]
 autoplay = "Armature|mixamocom|Layer0"
+
+[node name="suzanne" parent="Stage" instance=ExtResource("3_5d300")]
+transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0, 0, 0)
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.947902, 0.318562, 0, -0.318562, 0.947902, 0, 0.978825, 2.20251)

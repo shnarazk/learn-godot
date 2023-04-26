@@ -35,9 +35,9 @@ var warp = [
 
 func _on_god_yuhina_in(first):
 	if first:
-		start_conversation.emit(yuhina_and_god, false)
+		start_conversation.emit(yuhina_and_god, 1)
 	else:
-		start_conversation.emit(yuhina_and_god2, false)
+		start_conversation.emit(yuhina_and_god2, 0)
 
 
 func _on_kitty_kitty_meets_yuhina():

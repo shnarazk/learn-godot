@@ -2,18 +2,18 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://h781264k6fg6"
-path.s3tc="res://.godot/imported/boy_Boy01_FacialAnimMap.png-c52e2413feeb9943b9bd275011607f99.s3tc.ctex"
+uid="uid://606iablrascv"
+path.etc2="res://.godot/imported/boy_Boy01_normal.png-204ea5ea83e6e0d28bfe45b825a15154.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={}
 
 [deps]
 
-source_file="res://Objects/boy_Boy01_FacialAnimMap.png"
-dest_files=["res://.godot/imported/boy_Boy01_FacialAnimMap.png-c52e2413feeb9943b9bd275011607f99.s3tc.ctex"]
+source_file="res://Objects/boy/boy_Boy01_normal.png"
+dest_files=["res://.godot/imported/boy_Boy01_normal.png-204ea5ea83e6e0d28bfe45b825a15154.etc2.ctex"]
 
 [params]
 
@@ -21,12 +21,12 @@ compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
-compress/normal_map=0
+compress/normal_map=1
 compress/channel_pack=0
 mipmaps/generate=true
 mipmaps/limit=-1
-roughness/mode=0
-roughness/src_normal=""
+roughness/mode=1
+roughness/src_normal="res://Objects/boy_Boy01_normal.png"
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/normal_map_invert_y=false

@@ -14,5 +14,6 @@ var view: bool = false:
 func _process(_delta):
 	$Model.texture = $Viewport.get_texture()
 
-func _on_message_box_show_item():
+func _on_message_box_show_item(item: int):
+	$Viewport/Node3D.set_item(item)
 	self.view = true

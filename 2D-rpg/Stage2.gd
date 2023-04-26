@@ -9,7 +9,7 @@ var yuhina: Node = null:
 	set(value):
 		$God.yuhina = value
 
-const yuhina_start_at: Vector2 = Vector2(20, 80)
+const yuhina_start_at: Vector2 = Vector2(70, 90)
 
 var yuhina_and_god = [
 	"[b][color=blue]神様[/color][/b] また会ったな",
@@ -27,9 +27,9 @@ var yuhina_and_god2 = [
 
 func _on_god_yuhina_in(first):
 	if first:
-		start_conversation.emit(yuhina_and_god, true)
+		start_conversation.emit(yuhina_and_god, 2)
 	else:
-		start_conversation.emit(yuhina_and_god2, null)
+		start_conversation.emit(yuhina_and_god2, 0)
 
 func _on_kitty_kitty_meets_yuhina():
 	start_conversation.emit(['🐱 ウチに戻るニャー'], false)

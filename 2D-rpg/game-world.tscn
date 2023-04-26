@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://bamb1s48t4ow"]
+[gd_scene load_steps=14 format=3 uid="uid://dsvutoklb14je"]
 
 [ext_resource type="Script" path="res://game-world.gd" id="1_vex1p"]
 [ext_resource type="PackedScene" uid="uid://cijh13c6a8b5b" path="res://message_box.tscn" id="3_30fr4"]
@@ -6,7 +6,7 @@
 [ext_resource type="Script" path="res://Control.gd" id="5_bheqy"]
 [ext_resource type="AudioStream" uid="uid://b55s4l227yrt3" path="res://Sounds/Music.mp3" id="5_keaqd"]
 [ext_resource type="Script" path="res://CanvasLayer.gd" id="6_4nn7a"]
-[ext_resource type="PackedScene" uid="uid://fuinvmghmonw" path="res://3D.tscn" id="7_5xjky"]
+[ext_resource type="PackedScene" uid="uid://cgwsdovl4edfj" path="res://Objects/3D.tscn" id="7_5xjky"]
 [ext_resource type="AudioStream" uid="uid://4v8bg1bohhet" path="res://Sounds/Warp.wav" id="7_nmati"]
 [ext_resource type="Script" path="res://Selector.gd" id="8_2yr4e"]
 
@@ -92,9 +92,9 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-offset_left = 16.0
+offset_left = 8.0
 offset_top = 184.0
-offset_right = 316.0
+offset_right = 308.0
 offset_bottom = 224.0
 grow_horizontal = 1
 grow_vertical = 1
