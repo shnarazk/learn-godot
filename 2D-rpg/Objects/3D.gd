@@ -9,7 +9,7 @@ var spin: bool = false:
 		else:
 			$AnimationPlayer.stop()
 
-var target: int = randi_range(1, 2)
+var target: int = 0
 
 func set_item(index: int):
 	if index == -1:
