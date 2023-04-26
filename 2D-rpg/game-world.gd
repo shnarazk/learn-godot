@@ -8,14 +8,14 @@ var scene2: PackedScene = preload("res://Stage2.tscn")
 
 var current_scene: PackedScene = null
 var current_stage: Node = null
+var selecting: bool = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	switch_stage(scene1)
-	print(1)
 
 func _physics_process(_delta):
-	if Input.is_action_pressed("ui_accept"):
+	if Input.is_action_pressed("ui_accept") and not selecting:
 		$ItemViewer.view = false
 
 func switch_stage(scene: PackedScene):
@@ -25,6 +25,7 @@ func switch_stage(scene: PackedScene):
 	current_stage = scene.instantiate()
 	add_child(current_stage)
 	$Yuhina.position = current_stage.yuhina_start_at
+	current_stage.controller = $Control
 	current_stage.yuhina = $Yuhina
 	current_stage.connect("start_conversation", $Control.start_conversation)
 	current_stage.connect("change_stage", self.change_stage)

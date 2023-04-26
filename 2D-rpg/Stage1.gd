@@ -3,10 +3,12 @@ extends Node2D
 signal change_stage(next)
 signal start_conversation(lines, item)
 
+var controller: Node = null
 @export
 var yuhina: Node = null:
 	set(value):
 		$God.yuhina = value
+var selecting: bool = false
 
 const yuhina_start_at: Vector2 = Vector2(160, 180)
 
@@ -41,3 +43,9 @@ func _on_god_yuhina_in(first):
 func _on_kitty_kitty_meets_yuhina():
 	start_conversation.emit(warp, false)
 	change_stage.emit(2)
+
+func _on_bed_coming_to_bed():
+	if not selecting:
+		selecting = true
+		var x = await controller.select_from('寝る', '徹夜する')
+		selecting = false

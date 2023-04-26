@@ -3,6 +3,7 @@ extends Node2D
 signal change_stage(next)
 signal start_conversation(lines, item)
 
+var controller: Node = null
 @export
 var yuhina: Node = null:
 	set(value):

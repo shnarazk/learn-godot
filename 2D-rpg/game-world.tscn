@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://bamb1s48t4ow"]
+[gd_scene load_steps=14 format=3 uid="uid://bamb1s48t4ow"]
 
 [ext_resource type="Script" path="res://game-world.gd" id="1_vex1p"]
 [ext_resource type="PackedScene" uid="uid://cijh13c6a8b5b" path="res://message_box.tscn" id="3_30fr4"]
@@ -8,6 +8,7 @@
 [ext_resource type="Script" path="res://CanvasLayer.gd" id="6_4nn7a"]
 [ext_resource type="PackedScene" uid="uid://fuinvmghmonw" path="res://3D.tscn" id="7_5xjky"]
 [ext_resource type="AudioStream" uid="uid://4v8bg1bohhet" path="res://Sounds/Warp.wav" id="7_nmati"]
+[ext_resource type="Script" path="res://Selector.gd" id="8_2yr4e"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_gfxff"]
 resource_name = "item"
@@ -82,10 +83,6 @@ stream = ExtResource("5_keaqd")
 z_index = 3
 layout_mode = 3
 anchors_preset = 0
-offset_left = 8.0
-offset_top = 197.0
-offset_right = 8.0
-offset_bottom = 197.0
 script = ExtResource("5_bheqy")
 
 [node name="MessageBox" parent="Control" instance=ExtResource("3_30fr4")]
@@ -95,12 +92,35 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-offset_left = 0.0
-offset_top = 0.0
-offset_right = 300.0
-offset_bottom = 40.0
+offset_left = 16.0
+offset_top = 184.0
+offset_right = 316.0
+offset_bottom = 224.0
 grow_horizontal = 1
 grow_vertical = 1
+
+[node name="Selector" type="Control" parent="Control"]
+visible = false
+anchors_preset = 0
+offset_left = 40.0
+offset_top = 100.0
+offset_right = 270.0
+offset_bottom = 150.0
+script = ExtResource("8_2yr4e")
+
+[node name="SelectButtonLeft" type="Button" parent="Control/Selector"]
+layout_mode = 0
+offset_right = 100.0
+offset_bottom = 32.0
+text = "選択肢1"
+
+[node name="SelectButtonRight" type="Button" parent="Control/Selector"]
+layout_mode = 0
+offset_left = 128.0
+offset_right = 228.0
+offset_bottom = 32.0
+text = "選択肢2
+"
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 4.0
@@ -115,3 +135,5 @@ libraries = {
 stream = ExtResource("7_nmati")
 
 [connection signal="showItem" from="Control/MessageBox" to="ItemViewer" method="_on_message_box_show_item"]
+[connection signal="pressed" from="Control/Selector/SelectButtonLeft" to="Control/Selector" method="_on_select_button_1_pressed"]
+[connection signal="pressed" from="Control/Selector/SelectButtonRight" to="Control/Selector" method="_on_select_button_2_pressed"]

@@ -22,3 +22,8 @@ func start_conversation(lines, show_item):
 	visible = false
 	if show_item:
 		showItem.emit()
+
+func display_message(text: String):
+	visible = true
+	message.text = text
+
