@@ -6,12 +6,12 @@ func _ready():
 	pass # Replace with function body.
 
 
-func _on_body_entered(area):
+func _on_body_entered(_area):
 	$Anime.animation = "open"
 	$Anime.play()
 
 
-func _on_body_exited(area):
+func _on_body_exited(_area):
 	$Anime.animation = "close"
 	$Anime.play()
 

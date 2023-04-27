@@ -29,7 +29,7 @@ var yuhina_and_god2 = [
 ]
 
 var warp = [
-	"🐱 ワープなのニャー（運賃は自動引き落としなので残高に気をつけてください）！",
+	"🐱 ワープなのニャー（料金は自動引き落としなので残高に気をつけてください）！",
 	"[b][color=red]yuhina[/color][/b] ね、ねこの分際で！"
 ]
 
@@ -47,5 +47,5 @@ func _on_kitty_kitty_meets_yuhina():
 func _on_bed_coming_to_bed():
 	if not selecting:
 		selecting = true
-		var x = await controller.select_from('寝る', '徹夜する')
+		var _x = await controller.select_from('寝る', '徹夜する')
 		selecting = false

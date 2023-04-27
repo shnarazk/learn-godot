@@ -93,5 +93,3 @@ root_node = NodePath("../AudioStreamPlayer")
 libraries = {
 "": SubResource("AnimationLibrary_yj8w5")
 }
-
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

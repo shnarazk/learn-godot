@@ -12,7 +12,7 @@
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_gfxff"]
 resource_name = "item"
-viewport_path = NodePath("SubViewport")
+viewport_path = NodePath("ItemViewer/Viewport")
 
 [sub_resource type="Animation" id="Animation_00dax"]
 length = 0.001
@@ -67,6 +67,7 @@ visible = false
 script = ExtResource("6_4nn7a")
 
 [node name="Viewport" type="SubViewport" parent="ItemViewer"]
+own_world_3d = true
 transparent_bg = true
 
 [node name="Node3D" parent="ItemViewer/Viewport" instance=ExtResource("7_5xjky")]
@@ -80,12 +81,13 @@ texture = SubResource("ViewportTexture_gfxff")
 stream = ExtResource("5_keaqd")
 
 [node name="Control" type="Control" parent="."]
-z_index = 3
+z_index = 10
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("5_bheqy")
 
 [node name="MessageBox" parent="Control" instance=ExtResource("3_30fr4")]
+custom_minimum_size = Vector2(294, 40)
 layout_mode = 0
 anchors_preset = 0
 anchor_left = 0.0
@@ -93,9 +95,9 @@ anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 offset_left = 8.0
-offset_top = 184.0
-offset_right = 308.0
-offset_bottom = 224.0
+offset_top = 194.0
+offset_right = 298.0
+offset_bottom = 234.0
 grow_horizontal = 1
 grow_vertical = 1
 

@@ -26,11 +26,12 @@ var yuhina_and_god2 = [
 ]
 
 func _on_god_yuhina_in(first):
+	print('iii')
 	if first:
 		start_conversation.emit(yuhina_and_god, 2)
 	else:
 		start_conversation.emit(yuhina_and_god2, 0)
 
 func _on_kitty_kitty_meets_yuhina():
-	start_conversation.emit(['🐱 ウチに戻るニャー'], false)
+	start_conversation.emit(['🐱 ウチに戻るニャー'], 0)
 	change_stage.emit(1)

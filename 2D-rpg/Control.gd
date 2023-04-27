@@ -1,7 +1,8 @@
 extends Control
 
 
-func start_conversation(lines: Array[String], item: int):
+func start_conversation(lines, item):
+	print('comehere')
 	$MessageBox.start_conversation(lines, item)
 
 func select_from(left, right) -> bool:
