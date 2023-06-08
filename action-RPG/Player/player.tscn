@@ -1,4 +1,4 @@
-[gd_scene load_steps=70 format=3 uid="uid://bcbki7h5t1uyb"]
+[gd_scene load_steps=69 format=3 uid="uid://bcbki7h5t1uyb"]
 
 [ext_resource type="Script" path="res://Player/Player.gd" id="1_r6lmn"]
 [ext_resource type="Texture2D" uid="uid://bhmnvk7meoj8" path="res://Player/Player.png" id="2_c2kab"]
@@ -818,8 +818,6 @@ states/Start/position = Vector2(118, 32)
 transitions = ["Idle", "Run", SubResource("AnimationNodeStateMachineTransition_yj62o"), "Run", "Idle", SubResource("AnimationNodeStateMachineTransition_mwajc"), "Start", "Idle", SubResource("AnimationNodeStateMachineTransition_rjlwk"), "Idle", "Attack", SubResource("AnimationNodeStateMachineTransition_jo1tt"), "Attack", "Idle", SubResource("AnimationNodeStateMachineTransition_krlo5"), "Idle", "Roll", SubResource("AnimationNodeStateMachineTransition_d72ch"), "Roll", "Idle", SubResource("AnimationNodeStateMachineTransition_vqcus")]
 graph_offset = Vector2(-177.785, 22.102)
 
-[sub_resource type="AnimationNodeStateMachinePlayback" id="AnimationNodeStateMachinePlayback_rcoqi"]
-
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6iuy8"]
 height = 28.0
 
@@ -908,7 +906,6 @@ libraries = {
 [node name="AnimationTree" type="AnimationTree" parent="."]
 tree_root = SubResource("AnimationNodeStateMachine_gh07e")
 anim_player = NodePath("../AnimationPlayer")
-parameters/playback = SubResource("AnimationNodeStateMachinePlayback_rcoqi")
 parameters/Attack/blend_position = Vector2(0, 0)
 parameters/Idle/blend_position = Vector2(0, 0)
 parameters/Roll/blend_position = Vector2(0, 0)

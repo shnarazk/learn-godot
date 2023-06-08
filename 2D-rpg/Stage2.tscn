@@ -11,11 +11,10 @@ script = ExtResource("1_yfjgj")
 
 [node name="Background" parent="." instance=ExtResource("1_i0nqc")]
 
-[node name="God" parent="." node_paths=PackedStringArray("yuhina") instance=ExtResource("6_dtixp")]
+[node name="God" parent="." instance=ExtResource("6_dtixp")]
 y_sort_enabled = true
 position = Vector2(32, 136)
 scale = Vector2(0.5, 0.5)
-yuhina = NodePath("")
 
 [node name="Kitty" parent="." instance=ExtResource("7_ylvgq")]
 y_sort_enabled = true

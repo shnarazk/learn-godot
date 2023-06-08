@@ -11,7 +11,7 @@ var yuhina: Node = null:
 
 const yuhina_start_at: Vector2 = Vector2(70, 90)
 
-var yuhina_and_god = [
+var yuhina_and_god: Array = [
 	"[b][color=blue]神様[/color][/b] また会ったな",
 	"[b][color=red]yuhina[/color][/b] あ‼️ [color=red]途中省略[/color]",
 	"[b][color=blue]神様[/color][/b] 今のお前には無理じゃな👻",
@@ -20,7 +20,7 @@ var yuhina_and_god = [
 ]
 
 # 2回目以降のセリフ
-var yuhina_and_god2 = [
+var yuhina_and_god2: Array = [
 	"[b][color=blue]神様[/color][/b] 伝説のアイテム「踊る小学4年生人形🧸」を大事にしておるかの",
 	"[b][color=blue]神様[/color][/b] イベントをクリアしてからまた来るがよい。"
 ]

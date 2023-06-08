@@ -11,7 +11,7 @@ var active: bool = false
 func _ready():
 	visible = false
 
-func start_conversation(lines, show_item):
+func start_conversation(lines: Array, show_item: int):
 	visible = true
 	for l in lines:
 		message.text = l

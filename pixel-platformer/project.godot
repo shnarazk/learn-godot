@@ -13,7 +13,7 @@ config_version=5
 config/name="Learning Pixel Platformer"
 config/description="The product along HeartBeast's Pixel Platformer Tutorial"
 run/main_scene="res://Levels/level_1.tscn"
-config/features=PackedStringArray("4.0", "Forward Plus")
+config/features=PackedStringArray("4.1", "Forward Plus")
 config/icon="res://icon.svg"
 
 [autoload]

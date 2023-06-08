@@ -12,7 +12,7 @@ var selecting: bool = false
 
 const yuhina_start_at: Vector2 = Vector2(160, 180)
 
-var yuhina_and_god = [
+var yuhina_and_god: Array = [
 	"[b][color=blue]神様[/color][/b] やあよく来たな、yuhina!",
 	"[b][color=red]yuhina[/color][/b] あ！その声は3年前に死んだはずの神様では‼️",
 	"[b][color=blue]神様[/color][/b] ほほほほ、驚いたか👻",
