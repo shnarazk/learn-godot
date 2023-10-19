@@ -904,6 +904,9 @@ libraries = {
 }
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_kxr4m")
+}
 tree_root = SubResource("AnimationNodeStateMachine_gh07e")
 anim_player = NodePath("../AnimationPlayer")
 parameters/Attack/blend_position = Vector2(0, 0)
