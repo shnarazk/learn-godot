@@ -56,8 +56,7 @@ curve = SubResource("Curve2D_dcbtm")
 script = ExtResource("1_jt6rq")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="."]
-position = Vector2(-115.482, 25.2535)
-progress = 125.289
+position = Vector2(-59, -3)
 rotates = false
 
 [node name="Enemy" type="Node2D" parent="PathFollow2D"]
@@ -73,7 +72,7 @@ region_rect = Rect2(192, 0, 24, 24)
 shape = SubResource("CircleShape2D_lj7x0")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-autoplay = "MovingAlongPathLoop"
 libraries = {
 "": SubResource("AnimationLibrary_37nxm")
 }
+autoplay = "MovingAlongPathLoop"
