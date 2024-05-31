@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://2isjnvsl7iar"]
+
+[ext_resource type="Script" path="res://toplevel.gd" id="1_5lu2c"]
+[ext_resource type="PackedScene" uid="uid://w8tdbhld2wv4" path="res://selector_dialog.tscn" id="2_l0v7c"]
+
+[node name="Toplevel" type="Node2D"]
+script = ExtResource("1_5lu2c")
+
+[node name="SelectorDialog" parent="." instance=ExtResource("2_l0v7c")]
+offset_left = 120.0
+offset_top = 137.0
+offset_right = 620.0
+offset_bottom = 237.0
+focus_mode = 2
