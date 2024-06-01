@@ -1,31 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://w8tdbhld2wv4"]
+[gd_scene load_steps=3 format=3 uid="uid://w8tdbhld2wv4"]
 
 [ext_resource type="Theme" uid="uid://bn1iupobkna6n" path="res://new_theme.tres" id="1_ipu01"]
 [ext_resource type="Script" path="res://selector_dialog.gd" id="1_oqngr"]
-
-[sub_resource type="InputEventKey" id="InputEventKey_33x68"]
-device = -1
-keycode = 49
-unicode = 49
-
-[sub_resource type="InputEventKey" id="InputEventKey_jmalh"]
-device = -1
-keycode = 4194309
-
-[sub_resource type="Shortcut" id="Shortcut_rr5b3"]
-events = [SubResource("InputEventKey_33x68"), SubResource("InputEventKey_jmalh")]
-
-[sub_resource type="InputEventKey" id="InputEventKey_sju7c"]
-device = -1
-keycode = 50
-unicode = 50
-
-[sub_resource type="InputEventKey" id="InputEventKey_rodit"]
-device = -1
-keycode = 4194309
-
-[sub_resource type="Shortcut" id="Shortcut_y1fan"]
-events = [SubResource("InputEventKey_sju7c"), SubResource("InputEventKey_rodit")]
 
 [node name="SelectorDialog" type="Control"]
 layout_mode = 3
@@ -63,7 +39,6 @@ focus_neighbor_left = NodePath(".")
 focus_neighbor_right = NodePath("../ButtonR")
 focus_next = NodePath("../ButtonR")
 focus_previous = NodePath("../ButtonR")
-shortcut = SubResource("Shortcut_rr5b3")
 text = "左ボタンはこういう内容なんだけども長すぎるとどうなる？"
 autowrap_mode = 1
 clip_text = true
@@ -85,7 +60,6 @@ focus_neighbor_left = NodePath("../ButtonL")
 focus_neighbor_right = NodePath(".")
 focus_next = NodePath("../ButtonL")
 focus_previous = NodePath("../ButtonL")
-shortcut = SubResource("Shortcut_y1fan")
 text = "右ボタンはこういう内容"
 
 [connection signal="pressed" from="ButtonL" to="." method="_on_button_1_pressed"]
