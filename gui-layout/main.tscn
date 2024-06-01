@@ -1,0 +1,52 @@
+[gd_scene load_steps=4 format=3 uid="uid://cajnto7p0b1vj"]
+
+[sub_resource type="Gradient" id="Gradient_yiw7n"]
+colors = PackedColorArray(0.469414, 0.603352, 0.617188, 1, 0.242611, 0.390625, 0.226708, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_3c34r"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_mhc3y"]
+width = 520
+height = 210
+color_ramp = SubResource("Gradient_yiw7n")
+noise = SubResource("FastNoiseLite_3c34r")
+
+[node name="Top" type="Node2D"]
+
+[node name="GUI" type="VFlowContainer" parent="."]
+clip_contents = true
+custom_minimum_size = Vector2(800, 600)
+offset_right = 800.0
+offset_bottom = 600.0
+alignment = 2
+
+[node name="Select" type="CenterContainer" parent="GUI"]
+custom_minimum_size = Vector2(800, 100)
+layout_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="GUI/Select"]
+layout_mode = 2
+text = "ラベル1は単なる穴埋め"
+fit_content = true
+autowrap_mode = 0
+
+[node name="Dialog" type="Control" parent="GUI"]
+custom_minimum_size = Vector2(800, 250)
+layout_mode = 2
+size_flags_vertical = 8
+
+[node name="DialogBG" type="Sprite2D" parent="GUI/Dialog"]
+position = Vector2(400, 135)
+texture = SubResource("NoiseTexture2D_mhc3y")
+
+[node name="Text" type="RichTextLabel" parent="GUI/Dialog"]
+custom_minimum_size = Vector2(500, 180)
+layout_mode = 0
+offset_left = 150.0
+offset_top = 50.0
+offset_right = 650.0
+offset_bottom = 230.0
+bbcode_enabled = true
+text = "ラベル2
+[b]セリフ：[/b]　ここはセリフが表示されるところ
+[b]登場人物2： [/b]　[color=#3ff]できれば時間と共に表示され、表示が終わったらマウスクリックで先に進むようにしたい。[/color]"
