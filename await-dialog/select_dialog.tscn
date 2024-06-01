@@ -1,19 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://w8tdbhld2wv4"]
+[gd_scene load_steps=4 format=3 uid="uid://w8tdbhld2wv4"]
 
 [ext_resource type="Theme" uid="uid://bn1iupobkna6n" path="res://new_theme.tres" id="1_ipu01"]
-[ext_resource type="Script" path="res://selector_dialog.gd" id="1_oqngr"]
+[ext_resource type="Script" path="res://select_dialog.gd" id="1_uuy16"]
+[ext_resource type="Texture2D" uid="uid://bmsmkk3tbf3kk" path="res://bolt-solid.svg" id="3_xo5gu"]
 
-[node name="SelectorDialog" type="Control"]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 500.0
-offset_bottom = 100.0
-mouse_default_cursor_shape = 3
-theme = ExtResource("1_ipu01")
-script = ExtResource("1_oqngr")
+[node name="SelectDialog" type="Node2D"]
+script = ExtResource("1_uuy16")
 
 [node name="Title" type="RichTextLabel" parent="."]
-layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
@@ -26,41 +20,45 @@ text = "[center][b]さあどっち？[/b][/center]"
 fit_content = true
 
 [node name="ButtonL" type="Button" parent="."]
-custom_minimum_size = Vector2(200, 50)
-layout_mode = 1
+custom_minimum_size = Vector2(220, 50)
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_top = -19.06
-offset_right = 200.0
-offset_bottom = 39.94
+offset_left = -240.0
+offset_top = 35.0
+offset_right = -20.0
+offset_bottom = 85.0
 grow_vertical = 2
 focus_neighbor_left = NodePath(".")
 focus_neighbor_right = NodePath("../ButtonR")
 focus_next = NodePath("../ButtonR")
 focus_previous = NodePath("../ButtonR")
-text = "左ボタンはこういう内容なんだけども長すぎるとどうなる？"
+theme = ExtResource("1_ipu01")
+text = "左ボタン"
+icon = ExtResource("3_xo5gu")
 autowrap_mode = 1
 clip_text = true
 
 [node name="ButtonR" type="Button" parent="."]
-custom_minimum_size = Vector2(200, 50)
-layout_mode = 1
+custom_minimum_size = Vector2(220, 50)
 anchors_preset = 6
 anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = -200.0
-offset_top = -14.0
-offset_bottom = 36.0
+offset_left = 13.0
+offset_top = 35.0
+offset_right = 233.0
+offset_bottom = 85.0
 grow_horizontal = 0
 grow_vertical = 2
 focus_neighbor_left = NodePath("../ButtonL")
 focus_neighbor_right = NodePath(".")
 focus_next = NodePath("../ButtonL")
 focus_previous = NodePath("../ButtonL")
+theme = ExtResource("1_ipu01")
 text = "右ボタンはこういう内容"
+icon = ExtResource("3_xo5gu")
 
 [connection signal="pressed" from="ButtonL" to="." method="_on_button_1_pressed"]
 [connection signal="pressed" from="ButtonR" to="." method="_on_button_2_pressed"]

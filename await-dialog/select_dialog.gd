@@ -1,4 +1,4 @@
-extends Control
+extends Node2D
 signal selected(value)
 
 
