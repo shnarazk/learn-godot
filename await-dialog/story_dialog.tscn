@@ -1,8 +1,18 @@
-[gd_scene load_steps=4 format=3 uid="uid://b6i1onoyvxegu"]
+[gd_scene load_steps=5 format=3 uid="uid://b6i1onoyvxegu"]
 
 [ext_resource type="Texture2D" uid="uid://bna7juaj1n8i" path="res://ave-calvar-NqXqLPhdbvU-unsplash.jpg" id="1_cpdn0"]
 [ext_resource type="FontFile" uid="uid://cdktobbkv20dh" path="res://みかちゃん.otf" id="2_exmoc"]
 [ext_resource type="Texture2D" uid="uid://cavm0liki26ix" path="res://something1.png" id="2_jb3nt"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dcju3"]
+bg_color = Color(0.548205, 0.0951846, 0.59505, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+shadow_color = Color(0.158472, 0.158472, 0.158472, 0.6)
+shadow_size = 4
+shadow_offset = Vector2(3, 3)
 
 [node name="StoryDialog" type="Control"]
 clip_contents = true
@@ -23,19 +33,18 @@ offset_right = 784.0
 offset_bottom = 180.0
 
 [node name="SpeakerFrame" type="CenterContainer" parent="HBoxContainer"]
-custom_minimum_size = Vector2(200, 160)
+custom_minimum_size = Vector2(140, 160)
 layout_mode = 2
 size_flags_horizontal = 6
 size_flags_vertical = 4
 
 [node name="Sprite2D" type="Sprite2D" parent="HBoxContainer/SpeakerFrame"]
-position = Vector2(10, 10)
 scale = Vector2(0.05, 0.05)
 texture = ExtResource("2_jb3nt")
 centered = false
 
 [node name="TellFrame" type="VBoxContainer" parent="HBoxContainer"]
-custom_minimum_size = Vector2(580, 130)
+custom_minimum_size = Vector2(620, 130)
 layout_mode = 2
 alignment = 1
 
@@ -44,6 +53,7 @@ custom_minimum_size = Vector2(550, 120)
 layout_mode = 2
 theme_override_fonts/normal_font = ExtResource("2_exmoc")
 theme_override_font_sizes/normal_font_size = 20
+bbcode_enabled = true
 text = "説明文
 セリフ: ここは　ミカちゃんフォントを使用。
 "
@@ -52,4 +62,5 @@ text = "説明文
 custom_minimum_size = Vector2(50, 30)
 layout_mode = 2
 size_flags_horizontal = 8
+theme_override_styles/normal = SubResource("StyleBoxFlat_dcju3")
 text = "continue"
