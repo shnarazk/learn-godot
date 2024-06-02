@@ -1,8 +1,24 @@
-[gd_scene load_steps=4 format=3 uid="uid://w8tdbhld2wv4"]
+[gd_scene load_steps=8 format=3 uid="uid://w8tdbhld2wv4"]
 
 [ext_resource type="Theme" uid="uid://bn1iupobkna6n" path="res://new_theme.tres" id="1_ipu01"]
 [ext_resource type="Script" path="res://select_dialog.gd" id="1_uuy16"]
 [ext_resource type="Texture2D" uid="uid://bmsmkk3tbf3kk" path="res://bolt-solid.svg" id="3_xo5gu"]
+
+[sub_resource type="InputEventKey" id="InputEventKey_382s1"]
+device = -1
+keycode = 49
+unicode = 49
+
+[sub_resource type="Shortcut" id="Shortcut_3peco"]
+events = [SubResource("InputEventKey_382s1")]
+
+[sub_resource type="InputEventKey" id="InputEventKey_hkgls"]
+device = -1
+keycode = 50
+unicode = 50
+
+[sub_resource type="Shortcut" id="Shortcut_ty44l"]
+events = [SubResource("InputEventKey_hkgls")]
 
 [node name="SelectDialog" type="Node2D"]
 script = ExtResource("1_uuy16")
@@ -34,6 +50,7 @@ focus_neighbor_right = NodePath("../ButtonR")
 focus_next = NodePath("../ButtonR")
 focus_previous = NodePath("../ButtonR")
 theme = ExtResource("1_ipu01")
+shortcut = SubResource("Shortcut_3peco")
 text = "左ボタン"
 icon = ExtResource("3_xo5gu")
 autowrap_mode = 1
@@ -57,6 +74,7 @@ focus_neighbor_right = NodePath(".")
 focus_next = NodePath("../ButtonL")
 focus_previous = NodePath("../ButtonL")
 theme = ExtResource("1_ipu01")
+shortcut = SubResource("Shortcut_ty44l")
 text = "右ボタンはこういう内容"
 icon = ExtResource("3_xo5gu")
 
