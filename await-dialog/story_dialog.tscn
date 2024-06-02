@@ -1,0 +1,55 @@
+[gd_scene load_steps=4 format=3 uid="uid://b6i1onoyvxegu"]
+
+[ext_resource type="Texture2D" uid="uid://bna7juaj1n8i" path="res://ave-calvar-NqXqLPhdbvU-unsplash.jpg" id="1_cpdn0"]
+[ext_resource type="FontFile" uid="uid://cdktobbkv20dh" path="res://みかちゃん.otf" id="2_exmoc"]
+[ext_resource type="Texture2D" uid="uid://cavm0liki26ix" path="res://something1.png" id="2_jb3nt"]
+
+[node name="StoryDialog" type="Control"]
+clip_contents = true
+custom_minimum_size = Vector2(800, 180)
+layout_mode = 3
+anchors_preset = 0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-17, -566)
+scale = Vector2(0.26, 0.26)
+texture = ExtResource("1_cpdn0")
+centered = false
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+custom_minimum_size = Vector2(780, 140)
+layout_mode = 0
+offset_right = 784.0
+offset_bottom = 180.0
+
+[node name="SpeakerFrame" type="CenterContainer" parent="HBoxContainer"]
+custom_minimum_size = Vector2(200, 160)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+
+[node name="Sprite2D" type="Sprite2D" parent="HBoxContainer/SpeakerFrame"]
+position = Vector2(10, 10)
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("2_jb3nt")
+centered = false
+
+[node name="TellFrame" type="VBoxContainer" parent="HBoxContainer"]
+custom_minimum_size = Vector2(580, 130)
+layout_mode = 2
+alignment = 1
+
+[node name="Lines" type="RichTextLabel" parent="HBoxContainer/TellFrame"]
+custom_minimum_size = Vector2(550, 120)
+layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("2_exmoc")
+theme_override_font_sizes/normal_font_size = 20
+text = "説明文
+セリフ: ここは　ミカちゃんフォントを使用。
+"
+
+[node name="Prompt" type="Button" parent="HBoxContainer/TellFrame"]
+custom_minimum_size = Vector2(50, 30)
+layout_mode = 2
+size_flags_horizontal = 8
+text = "continue"

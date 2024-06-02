@@ -17,10 +17,9 @@ config/icon="res://icon.svg"
 
 [display]
 
-window/size/viewport_width=1000
-window/size/viewport_height=600
-window/stretch/mode="canvas_items"
-window/stretch/aspect="keep_width"
+window/size/viewport_width=800
+window/size/viewport_height=500
+window/stretch/mode="viewport"
 
 [input]
 
@@ -42,3 +41,4 @@ ui_right={
 [rendering]
 
 textures/vram_compression/import_etc2_astc=true
+environment/defaults/default_clear_color=Color(0.553179, 0.732422, 0.659172, 1)

@@ -3,7 +3,7 @@ signal selected(value)
 
 
 func _ready():
-	pass # visible = false
+	visible = false
 
 
 func open(title, str1, str2) -> int:
@@ -20,14 +20,18 @@ func open(title, str1, str2) -> int:
 	visible = false
 	return val
 
-func _event():
-	pass
 
 func _on_button_1_pressed():
-	print("l")
 	selected.emit(1)
 
 
 func _on_button_2_pressed():
-	print("r")
 	selected.emit(2)
+
+
+func _on_button_l_mouse_entered():
+	$ButtonL.grab_focus()
+
+
+func _on_button_r_mouse_entered():
+	$ButtonR.grab_focus()

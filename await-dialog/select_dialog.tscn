@@ -78,5 +78,7 @@ shortcut = SubResource("Shortcut_ty44l")
 text = "右ボタンはこういう内容"
 icon = ExtResource("3_xo5gu")
 
+[connection signal="mouse_entered" from="ButtonL" to="." method="_on_button_l_mouse_entered"]
 [connection signal="pressed" from="ButtonL" to="." method="_on_button_1_pressed"]
+[connection signal="mouse_entered" from="ButtonR" to="." method="_on_button_r_mouse_entered"]
 [connection signal="pressed" from="ButtonR" to="." method="_on_button_2_pressed"]
