@@ -7,6 +7,7 @@
 
 [sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_7afa4"]
 dof_blur_far_enabled = true
+dof_blur_far_distance = 1.24
 dof_blur_near_enabled = true
 
 [node name="Toplevel" type="Node2D"]
@@ -20,6 +21,7 @@ texture = ExtResource("2_200x0")
 centered = false
 
 [node name="SelectDialog" parent="." instance=ExtResource("2_l0v7c")]
+visible = false
 position = Vector2(400, 180)
 
 [node name="StoryDialog" parent="." instance=ExtResource("3_cdrl4")]

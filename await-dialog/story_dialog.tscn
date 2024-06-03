@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://b6i1onoyvxegu"]
+[gd_scene load_steps=6 format=3 uid="uid://b6i1onoyvxegu"]
 
 [ext_resource type="Texture2D" uid="uid://bna7juaj1n8i" path="res://ave-calvar-NqXqLPhdbvU-unsplash.jpg" id="1_cpdn0"]
+[ext_resource type="Script" path="res://story_dialog.gd" id="1_mmiu3"]
 [ext_resource type="FontFile" uid="uid://cdktobbkv20dh" path="res://みかちゃん.otf" id="2_exmoc"]
 [ext_resource type="Texture2D" uid="uid://cavm0liki26ix" path="res://something1.png" id="2_jb3nt"]
 
@@ -19,6 +20,7 @@ clip_contents = true
 custom_minimum_size = Vector2(800, 180)
 layout_mode = 3
 anchors_preset = 0
+script = ExtResource("1_mmiu3")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(-17, -566)
@@ -64,3 +66,5 @@ layout_mode = 2
 size_flags_horizontal = 8
 theme_override_styles/normal = SubResource("StyleBoxFlat_dcju3")
 text = "continue"
+
+[connection signal="pressed" from="HBoxContainer/TellFrame/Prompt" to="." method="_on_prompt_pressed"]
