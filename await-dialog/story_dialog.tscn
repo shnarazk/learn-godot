@@ -1,8 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://b6i1onoyvxegu"]
+[gd_scene load_steps=5 format=3 uid="uid://b6i1onoyvxegu"]
 
 [ext_resource type="Texture2D" uid="uid://bna7juaj1n8i" path="res://ave-calvar-NqXqLPhdbvU-unsplash.jpg" id="1_cpdn0"]
 [ext_resource type="Script" path="res://story_dialog.gd" id="1_mmiu3"]
-[ext_resource type="FontFile" uid="uid://cdktobbkv20dh" path="res://みかちゃん.otf" id="2_exmoc"]
 [ext_resource type="Texture2D" uid="uid://cavm0liki26ix" path="res://something1.png" id="2_jb3nt"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dcju3"]
@@ -53,8 +52,6 @@ alignment = 1
 [node name="Lines" type="RichTextLabel" parent="HBoxContainer/TellFrame"]
 custom_minimum_size = Vector2(550, 120)
 layout_mode = 2
-theme_override_fonts/normal_font = ExtResource("2_exmoc")
-theme_override_font_sizes/normal_font_size = 20
 bbcode_enabled = true
 text = "説明文
 セリフ: ここは　ミカちゃんフォントを使用。

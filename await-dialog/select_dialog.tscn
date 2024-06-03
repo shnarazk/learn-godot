@@ -31,6 +31,7 @@ offset_left = -250.0
 offset_right = 250.0
 offset_bottom = 30.0
 grow_horizontal = 2
+theme = ExtResource("1_ipu01")
 bbcode_enabled = true
 text = "[center][b]さあどっち？[/b][/center]"
 fit_content = true

@@ -6,6 +6,7 @@ signal get_prompt
 func _ready():
 	$HBoxContainer/TellFrame/Prompt.visible = false
 
+# TODO: \t でスプリット表示したい
 func print_lines(lines: Array):
 	for line in lines:
 		$HBoxContainer/TellFrame/Lines.text = line

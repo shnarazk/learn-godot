@@ -28,10 +28,10 @@ func _ready():
 		else:
 			await $StoryDialog.print_lines([
 				"「近くに何かあるようだ」",
-				"傭兵としての勘を信じて、何があっても右手の短剣でなんとかなりそうな、あえて狭い道を進むことにした",
+				"自分の勘を信じて、何があっても手持ちの武器でなんとかなりそうな、あえて狭い道を進むことにした",
 				"そして何か巨大な塊の前に出た。"
 			])
-			res = await $SelectDialog.open("[color=red]その塊はまるで呼吸しているように上下しています[/color]", "引き返す", "様子を伺う")
+			res = await $SelectDialog.open("[color=#faa]その塊はまるで呼吸しているように上下しています[/color]", "引き返す", "様子を伺う")
 			print(res)
 			loop = res == 1
 	await $StoryDialog.print_lines([
