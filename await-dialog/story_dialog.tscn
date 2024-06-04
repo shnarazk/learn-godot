@@ -22,15 +22,15 @@ anchors_preset = 0
 script = ExtResource("1_mmiu3")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(-17, -566)
+position = Vector2(-9, -944)
 scale = Vector2(0.26, 0.26)
 texture = ExtResource("1_cpdn0")
 centered = false
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
-custom_minimum_size = Vector2(780, 140)
+custom_minimum_size = Vector2(750, 140)
 layout_mode = 0
-offset_right = 784.0
+offset_right = 770.0
 offset_bottom = 180.0
 
 [node name="SpeakerFrame" type="CenterContainer" parent="HBoxContainer"]
@@ -45,16 +45,17 @@ texture = ExtResource("2_jb3nt")
 centered = false
 
 [node name="TellFrame" type="VBoxContainer" parent="HBoxContainer"]
-custom_minimum_size = Vector2(620, 130)
+custom_minimum_size = Vector2(600, 130)
 layout_mode = 2
 alignment = 1
 
 [node name="Lines" type="RichTextLabel" parent="HBoxContainer/TellFrame"]
-custom_minimum_size = Vector2(550, 120)
+custom_minimum_size = Vector2(500, 120)
 layout_mode = 2
 bbcode_enabled = true
 text = "説明文
 セリフ: ここは　ミカちゃんフォントを使用。
+しない。。拡大するとガタガタになるようだ。
 "
 
 [node name="Prompt" type="Button" parent="HBoxContainer/TellFrame"]
@@ -62,6 +63,6 @@ custom_minimum_size = Vector2(50, 30)
 layout_mode = 2
 size_flags_horizontal = 8
 theme_override_styles/normal = SubResource("StyleBoxFlat_dcju3")
-text = "continue"
+text = "▶︎"
 
 [connection signal="pressed" from="HBoxContainer/TellFrame/Prompt" to="." method="_on_prompt_pressed"]
