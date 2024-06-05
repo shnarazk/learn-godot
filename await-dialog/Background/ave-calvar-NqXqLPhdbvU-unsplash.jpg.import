@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bna7juaj1n8i"
-path="res://.godot/imported/ave-calvar-NqXqLPhdbvU-unsplash.jpg-d252e864843d6221031997bd5e2768c9.ctex"
+path="res://.godot/imported/ave-calvar-NqXqLPhdbvU-unsplash.jpg-7a6ed8de1c9b7a92b339e385418a51b8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ave-calvar-NqXqLPhdbvU-unsplash.jpg"
-dest_files=["res://.godot/imported/ave-calvar-NqXqLPhdbvU-unsplash.jpg-d252e864843d6221031997bd5e2768c9.ctex"]
+source_file="res://Background/ave-calvar-NqXqLPhdbvU-unsplash.jpg"
+dest_files=["res://.godot/imported/ave-calvar-NqXqLPhdbvU-unsplash.jpg-7a6ed8de1c9b7a92b339e385418a51b8.ctex"]
 
 [params]
 

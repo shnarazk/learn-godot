@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://b6i1onoyvxegu"]
 
-[ext_resource type="Texture2D" uid="uid://bna7juaj1n8i" path="res://ave-calvar-NqXqLPhdbvU-unsplash.jpg" id="1_cpdn0"]
+[ext_resource type="Texture2D" uid="uid://bna7juaj1n8i" path="res://Background/ave-calvar-NqXqLPhdbvU-unsplash.jpg" id="1_cpdn0"]
 [ext_resource type="Script" path="res://story_dialog.gd" id="1_mmiu3"]
 [ext_resource type="Texture2D" uid="uid://cavm0liki26ix" path="res://something1.png" id="2_jb3nt"]
 
@@ -21,7 +21,8 @@ layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_mmiu3")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="BG" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.74902)
 position = Vector2(-9, -944)
 scale = Vector2(0.26, 0.26)
 texture = ExtResource("1_cpdn0")

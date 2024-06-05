@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://g2nvhw3xwri0"
-path="res://.godot/imported/soheb-zaidi-7Czm0mjIaWs-unsplash.png-42cc4f3cca92dea5a45225c28c3a3f6b.ctex"
+uid="uid://b86fslnatugo0"
+path="res://.godot/imported/yamagasa2.jpg-ac2ff1b7180d6f7078e72d442124147f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://soheb-zaidi-7Czm0mjIaWs-unsplash.png"
-dest_files=["res://.godot/imported/soheb-zaidi-7Czm0mjIaWs-unsplash.png-42cc4f3cca92dea5a45225c28c3a3f6b.ctex"]
+source_file="res://Background/yamagasa2.jpg"
+dest_files=["res://.godot/imported/yamagasa2.jpg-ac2ff1b7180d6f7078e72d442124147f.ctex"]
 
 [params]
 

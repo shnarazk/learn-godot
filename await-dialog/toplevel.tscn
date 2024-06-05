@@ -1,9 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://2isjnvsl7iar"]
+[gd_scene load_steps=9 format=3 uid="uid://2isjnvsl7iar"]
 
 [ext_resource type="Script" path="res://toplevel.gd" id="1_5lu2c"]
-[ext_resource type="Texture2D" uid="uid://bna7juaj1n8i" path="res://ave-calvar-NqXqLPhdbvU-unsplash.jpg" id="2_200x0"]
+[ext_resource type="Texture2D" uid="uid://bna7juaj1n8i" path="res://Background/ave-calvar-NqXqLPhdbvU-unsplash.jpg" id="2_200x0"]
 [ext_resource type="PackedScene" uid="uid://w8tdbhld2wv4" path="res://select_dialog.tscn" id="2_l0v7c"]
+[ext_resource type="Texture2D" uid="uid://c0fvokvdvrql7" path="res://Background/yamagasa1.jpg" id="3_8kx4m"]
 [ext_resource type="PackedScene" uid="uid://b6i1onoyvxegu" path="res://story_dialog.tscn" id="3_cdrl4"]
+[ext_resource type="Texture2D" uid="uid://b86fslnatugo0" path="res://Background/yamagasa2.jpg" id="4_hqwcp"]
 [ext_resource type="Theme" uid="uid://bn1iupobkna6n" path="res://new_theme.tres" id="5_sqcje"]
 
 [sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_7afa4"]
@@ -14,11 +16,23 @@ dof_blur_near_enabled = true
 [node name="Toplevel" type="Node2D"]
 script = ExtResource("1_5lu2c")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="BG0" type="Sprite2D" parent="."]
 position = Vector2(-78, 624)
 rotation = -1.5708
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("2_200x0")
+centered = false
+
+[node name="BG1" type="Sprite2D" parent="."]
+modulate = Color(0.56, 0.56, 0.56, 1)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("3_8kx4m")
+centered = false
+
+[node name="BG2" type="Sprite2D" parent="."]
+modulate = Color(0.52, 0.52, 0.52, 1)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("4_hqwcp")
 centered = false
 
 [node name="SelectDialog" parent="." instance=ExtResource("2_l0v7c")]

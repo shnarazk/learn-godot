@@ -13,6 +13,7 @@ func print_lines(lines: Array):
 		$HBoxContainer/TellFrame/Prompt.visible = true
 		$HBoxContainer/TellFrame/Prompt.grab_focus()
 		await get_prompt
+	$HBoxContainer/TellFrame/Lines.text = ''
 
 func _on_prompt_pressed():
 	$HBoxContainer/TellFrame/Prompt.visible = false
